@@ -34,8 +34,7 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.modals.User;
-import com.builderstrom.user.repository.retrofit.modals.UserModel;
+import com.builderstrom.user.data.retrofit.modals.User;
 import com.builderstrom.user.views.customViews.textChips.chip.Chip;
 import com.builderstrom.user.views.customViews.textChips.chip.ChipInfo;
 import com.builderstrom.user.views.customViews.textChips.chip.ChipSpan;

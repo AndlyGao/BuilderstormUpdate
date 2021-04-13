@@ -13,10 +13,10 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.modals.PojoAttachment;
-import com.builderstrom.user.repository.retrofit.modals.RfiFileModel;
-import com.builderstrom.user.repository.retrofit.modals.Snag;
-import com.builderstrom.user.repository.retrofit.modals.User;
+import com.builderstrom.user.data.retrofit.modals.PojoAttachment;
+import com.builderstrom.user.data.retrofit.modals.RfiFileModel;
+import com.builderstrom.user.data.retrofit.modals.Snag;
+import com.builderstrom.user.data.retrofit.modals.User;
 import com.builderstrom.user.utils.CommonMethods;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;

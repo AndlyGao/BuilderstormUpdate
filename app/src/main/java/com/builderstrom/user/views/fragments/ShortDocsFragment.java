@@ -7,8 +7,8 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.modals.NotificationListModel;
-import com.builderstrom.user.repository.retrofit.modals.PojoMyItem;
+import com.builderstrom.user.data.retrofit.modals.NotificationListModel;
+import com.builderstrom.user.data.retrofit.modals.PojoMyItem;
 import com.builderstrom.user.viewmodels.DigitalDocumentVM;
 import com.builderstrom.user.views.activities.BaseActivity;
 import com.builderstrom.user.views.adapters.DigitalDocMyItemsListAdapter;

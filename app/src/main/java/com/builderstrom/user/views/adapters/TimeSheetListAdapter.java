@@ -12,9 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.api.DataNames;
-import com.builderstrom.user.repository.retrofit.modals.TimeSheetListModel;
-import com.builderstrom.user.utils.CommonMethods;
+import com.builderstrom.user.data.retrofit.api.DataNames;
+import com.builderstrom.user.data.retrofit.modals.TimeSheetListModel;
 import com.builderstrom.user.viewmodels.TimeSheetViewModel;
 import com.builderstrom.user.views.activities.BaseActivity;
 import com.builderstrom.user.views.dialogFragments.AddTimeSheetDialogFragment;
@@ -24,8 +23,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-
-import static com.builderstrom.user.views.fragments.HomeMenuFragment.userPermissions;
 
 public class TimeSheetListAdapter extends RecyclerView.Adapter<TimeSheetListAdapter.TimeSheetHolder> {
 

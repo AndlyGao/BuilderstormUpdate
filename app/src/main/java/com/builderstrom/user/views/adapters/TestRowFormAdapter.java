@@ -1,7 +1,6 @@
 package com.builderstrom.user.views.adapters;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,11 +11,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.modals.DigitalFormModel;
-import com.builderstrom.user.repository.retrofit.modals.RowFormModel;
-import com.builderstrom.user.repository.retrofit.modals.TemplateData;
-import com.builderstrom.user.views.activities.DigitalFormActivity;
-import com.google.gson.Gson;
+import com.builderstrom.user.data.retrofit.modals.DigitalFormModel;
+import com.builderstrom.user.data.retrofit.modals.RowFormModel;
+import com.builderstrom.user.data.retrofit.modals.TemplateData;
 
 import java.util.ArrayList;
 import java.util.List;

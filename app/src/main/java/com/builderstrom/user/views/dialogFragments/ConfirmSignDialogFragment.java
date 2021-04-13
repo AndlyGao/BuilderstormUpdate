@@ -13,8 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.builderstrom.user.R;
 import com.builderstrom.user.views.adapters.TimeListAdapter;
 import com.builderstrom.user.views.viewInterfaces.ConfirmSignCallback;
-import com.builderstrom.user.repository.retrofit.modals.OverTimeModel;
-import com.builderstrom.user.repository.retrofit.modals.StandardBreaks;
+import com.builderstrom.user.data.retrofit.modals.OverTimeModel;
+import com.builderstrom.user.data.retrofit.modals.StandardBreaks;
 import com.builderstrom.user.utils.BuilderStormApplication;
 
 import java.util.ArrayList;

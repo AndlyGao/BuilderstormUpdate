@@ -19,24 +19,21 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.Prefs;
-import com.builderstrom.user.repository.database.DatabaseHelper;
-import com.builderstrom.user.repository.database.databaseModels.UserProjects;
-import com.builderstrom.user.repository.retrofit.api.DataNames;
-import com.builderstrom.user.repository.retrofit.api.RestClient;
-import com.builderstrom.user.repository.retrofit.modals.ErrorModel;
-import com.builderstrom.user.repository.retrofit.modals.PojoErrorModel;
-import com.builderstrom.user.repository.retrofit.modals.ProjectDetails;
-import com.builderstrom.user.repository.retrofit.modals.User;
+import com.builderstrom.user.data.Prefs;
+import com.builderstrom.user.data.database.DatabaseHelper;
+import com.builderstrom.user.data.database.databaseModels.UserProjects;
+import com.builderstrom.user.data.retrofit.api.DataNames;
+import com.builderstrom.user.data.retrofit.api.RestClient;
+import com.builderstrom.user.data.retrofit.modals.ErrorModel;
+import com.builderstrom.user.data.retrofit.modals.PojoErrorModel;
+import com.builderstrom.user.data.retrofit.modals.ProjectDetails;
+import com.builderstrom.user.data.retrofit.modals.User;
 import com.builderstrom.user.service.DbSyncSchedulerTask;
 import com.builderstrom.user.service.DownloadTask;
 import com.builderstrom.user.utils.ClientLogger;
 import com.builderstrom.user.utils.CommonMethods;
 import com.builderstrom.user.views.activities.ImageFullScreenActivity;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.iid.InstanceIdResult;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -56,17 +53,19 @@ public abstract class BaseViewModel extends AndroidViewModel {
     private JobScheduler scheduler;
     private static String TAG = BaseViewModel.class.getName();
     String firebaseToken = "";
+    protected Gson gSon;
 
     public BaseViewModel(@NonNull Application application) {
         super(application);
         mPrefs = Prefs.with(application);
-        mDatabase = new DatabaseHelper(application);
+        mDatabase = DatabaseHelper.getDatabaseInstance(application);
         usersLD = new MutableLiveData<>();
         isLoadingLD = new MutableLiveData<>();
         isUploadingLD = new MutableLiveData<>();
         errorModelLD = new MutableLiveData<>();
-
+        gSon = new Gson();
     }
+
 
     public boolean isInternetAvailable() {
         return CommonMethods.isNetworkAvailable(getApplication());
@@ -185,6 +184,7 @@ public abstract class BaseViewModel extends AndroidViewModel {
         }
         return false;
     }
+
     public boolean isAlreadyScheduleToDoJob() {
         for (JobInfo jobInfo : getScheduler().getAllPendingJobs()) {
             if (jobInfo.getId() == DataNames.SYNC_ALL_TO_DO_SERVICE_ID) {
@@ -271,14 +271,6 @@ public abstract class BaseViewModel extends AndroidViewModel {
             }
         }.execute();
     }
-
-
-
-
-
-
-
-
 
 
 }

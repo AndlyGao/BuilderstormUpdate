@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.builderstrom.user.R;
 import com.builderstrom.user.utils.CommonMethods;
-import com.builderstrom.user.repository.retrofit.modals.ProjectNote;
+import com.builderstrom.user.data.retrofit.modals.ProjectNote;
 
 import java.util.List;
 

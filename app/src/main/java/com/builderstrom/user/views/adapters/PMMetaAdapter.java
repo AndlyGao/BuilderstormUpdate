@@ -1,8 +1,6 @@
 package com.builderstrom.user.views.adapters;
 
 import android.content.Context;
-import android.text.Html;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.api.RestClient;
-import com.builderstrom.user.repository.retrofit.modals.ProjectCustomData;
+import com.builderstrom.user.data.retrofit.api.RestClient;
+import com.builderstrom.user.data.retrofit.modals.ProjectCustomData;
 import com.builderstrom.user.utils.CommonMethods;
 import com.builderstrom.user.utils.GlideApp;
 import com.builderstrom.user.utils.PermissionUtils;
@@ -22,8 +20,6 @@ import com.builderstrom.user.viewmodels.PMViewModel;
 import com.builderstrom.user.views.activities.BaseActivity;
 import com.bumptech.glide.request.RequestOptions;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.List;
 
 import butterknife.BindView;

@@ -1,7 +1,6 @@
 package com.builderstrom.user.views.dialogFragments;
 
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -10,9 +9,9 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.api.DataNames;
-import com.builderstrom.user.repository.retrofit.modals.ForwordedDetail;
-import com.builderstrom.user.repository.retrofit.modals.PDocsDataModel;
+import com.builderstrom.user.data.retrofit.api.DataNames;
+import com.builderstrom.user.data.retrofit.modals.ForwordedDetail;
+import com.builderstrom.user.data.retrofit.modals.PDocsDataModel;
 import com.builderstrom.user.utils.CommonMethods;
 import com.builderstrom.user.viewmodels.ProjectDocumentVM;
 import com.builderstrom.user.views.viewInterfaces.EditSuccessCallback;

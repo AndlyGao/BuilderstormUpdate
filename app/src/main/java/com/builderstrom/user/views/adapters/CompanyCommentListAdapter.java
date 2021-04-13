@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,7 +13,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.modals.CompanyComment;
+import com.builderstrom.user.data.retrofit.modals.CompanyComment;
 import com.builderstrom.user.utils.CommonMethods;
 import com.builderstrom.user.utils.GlideApp;
 import com.bumptech.glide.request.RequestOptions;

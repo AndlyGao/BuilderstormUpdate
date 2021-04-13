@@ -11,12 +11,12 @@ import androidx.appcompat.widget.ListPopupWindow;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.api.DataNames;
-import com.builderstrom.user.repository.retrofit.modals.PojoPriceWorkModel;
-import com.builderstrom.user.repository.retrofit.modals.ProjectDetails;
-import com.builderstrom.user.repository.retrofit.modals.ReturnOverviewDetail;
-import com.builderstrom.user.repository.retrofit.modals.TSNote;
-import com.builderstrom.user.repository.retrofit.modals.TaskListing;
+import com.builderstrom.user.data.retrofit.api.DataNames;
+import com.builderstrom.user.data.retrofit.modals.PojoPriceWorkModel;
+import com.builderstrom.user.data.retrofit.modals.ProjectDetails;
+import com.builderstrom.user.data.retrofit.modals.ReturnOverviewDetail;
+import com.builderstrom.user.data.retrofit.modals.TSNote;
+import com.builderstrom.user.data.retrofit.modals.TaskListing;
 import com.builderstrom.user.utils.CommonMethods;
 import com.builderstrom.user.viewmodels.TimeSheetViewModel;
 import com.builderstrom.user.views.activities.BaseActivity;

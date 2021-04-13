@@ -13,8 +13,8 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.modals.ProjectCustomData;
-import com.builderstrom.user.repository.retrofit.modals.ProjectDetails;
+import com.builderstrom.user.data.retrofit.modals.ProjectCustomData;
+import com.builderstrom.user.data.retrofit.modals.ProjectDetails;
 import com.builderstrom.user.utils.CommonMethods;
 import com.builderstrom.user.utils.GlideApp;
 import com.builderstrom.user.viewmodels.PMViewModel;

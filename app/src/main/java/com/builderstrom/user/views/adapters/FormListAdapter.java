@@ -32,9 +32,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.api.RestClient;
-import com.builderstrom.user.repository.retrofit.modals.MetaOptions;
-import com.builderstrom.user.repository.retrofit.modals.RowFormModel;
+import com.builderstrom.user.data.retrofit.api.RestClient;
+import com.builderstrom.user.data.retrofit.modals.MetaOptions;
+import com.builderstrom.user.data.retrofit.modals.RowFormModel;
 import com.builderstrom.user.utils.BuilderStormApplication;
 import com.builderstrom.user.utils.CommonMethods;
 import com.builderstrom.user.utils.GlideApp;

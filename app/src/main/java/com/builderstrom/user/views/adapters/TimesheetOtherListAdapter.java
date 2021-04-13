@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.modals.TimesheetMetaData;
+import com.builderstrom.user.data.retrofit.modals.TimesheetMetaData;
 
 import java.util.ArrayList;
 import java.util.List;

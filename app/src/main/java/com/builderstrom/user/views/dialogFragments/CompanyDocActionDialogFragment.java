@@ -8,8 +8,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.api.DataNames;
-import com.builderstrom.user.repository.retrofit.modals.CompanyDocument;
+import com.builderstrom.user.data.retrofit.api.DataNames;
+import com.builderstrom.user.data.retrofit.modals.CompanyDocument;
 import com.builderstrom.user.utils.CommonMethods;
 import com.builderstrom.user.viewmodels.CompanyViewModel;
 import com.builderstrom.user.views.activities.BaseActivity;

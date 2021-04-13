@@ -9,7 +9,7 @@ import android.util.Log;
 
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
-import com.builderstrom.user.repository.retrofit.api.DataNames;
+import com.builderstrom.user.data.retrofit.api.DataNames;
 
 public class NetworkChangeReceiver extends BroadcastReceiver {
     private static boolean firstConnect = true;

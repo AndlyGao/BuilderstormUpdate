@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.modals.AddAttachModel;
+import com.builderstrom.user.data.retrofit.modals.AddAttachModel;
 import com.builderstrom.user.utils.CommonMethods;
 
 import java.util.List;

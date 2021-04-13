@@ -1,12 +1,11 @@
 package com.builderstrom.user.views.dialogFragments;
 
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.TextView;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.modals.PDocsDataModel;
+import com.builderstrom.user.data.retrofit.modals.PDocsDataModel;
 import com.builderstrom.user.utils.CommonMethods;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;

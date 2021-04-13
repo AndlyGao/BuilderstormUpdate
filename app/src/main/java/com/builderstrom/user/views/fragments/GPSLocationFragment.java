@@ -15,7 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 
-import com.builderstrom.user.repository.retrofit.modals.CurrentLocation;
+import com.builderstrom.user.data.retrofit.modals.CurrentLocation;
 import com.builderstrom.user.utils.BuilderStormApplication;
 import com.builderstrom.user.utils.CommonMethods;
 import com.builderstrom.user.utils.PermissionUtils;

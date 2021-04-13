@@ -30,7 +30,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.api.DataNames;
+import com.builderstrom.user.data.retrofit.api.DataNames;
 import com.builderstrom.user.utils.CommonMethods;
 import com.builderstrom.user.viewmodels.WorkSpaceViewModel;
 

@@ -22,10 +22,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.api.DataNames;
-import com.builderstrom.user.repository.retrofit.modals.CatListing;
-import com.builderstrom.user.repository.retrofit.modals.DocumentStatus;
-import com.builderstrom.user.repository.retrofit.modals.PDocsDataModel;
+import com.builderstrom.user.data.retrofit.api.DataNames;
+import com.builderstrom.user.data.retrofit.modals.CatListing;
+import com.builderstrom.user.data.retrofit.modals.DocumentStatus;
+import com.builderstrom.user.data.retrofit.modals.PDocsDataModel;
 import com.builderstrom.user.utils.CommonMethods;
 import com.builderstrom.user.viewmodels.ProjectDocumentVM;
 import com.builderstrom.user.views.activities.AddDocumentActivity;

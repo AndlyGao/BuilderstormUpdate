@@ -13,8 +13,8 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.api.DataNames;
-import com.builderstrom.user.repository.retrofit.modals.User;
+import com.builderstrom.user.data.retrofit.api.DataNames;
+import com.builderstrom.user.data.retrofit.modals.User;
 import com.builderstrom.user.utils.CommonMethods;
 import com.builderstrom.user.viewmodels.ShareViewModel;
 import com.builderstrom.user.views.customViews.textChips.NachoTextView;

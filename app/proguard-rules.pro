@@ -30,7 +30,7 @@
 #    @retrofit2.http.* <methods>;
 #}
 
--keep class com.builderstrom.user.repository.retrofit.modals.** { *; }
+-keep class com.builderstrom.user.data.retrofit.modals.** { *; }
 
 -keep class org.jsoup.** { *; }
 

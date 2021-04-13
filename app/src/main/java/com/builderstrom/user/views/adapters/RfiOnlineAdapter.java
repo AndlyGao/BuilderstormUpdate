@@ -20,10 +20,10 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.api.DataNames;
-import com.builderstrom.user.repository.retrofit.modals.ErrorModel;
-import com.builderstrom.user.repository.retrofit.modals.Rfi;
-import com.builderstrom.user.repository.retrofit.modals.User;
+import com.builderstrom.user.data.retrofit.api.DataNames;
+import com.builderstrom.user.data.retrofit.modals.ErrorModel;
+import com.builderstrom.user.data.retrofit.modals.Rfi;
+import com.builderstrom.user.data.retrofit.modals.User;
 import com.builderstrom.user.utils.CommonMethods;
 import com.builderstrom.user.viewmodels.RFIViewModel;
 import com.builderstrom.user.views.activities.BaseActivity;

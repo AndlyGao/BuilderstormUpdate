@@ -16,9 +16,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.modals.CatListing;
-import com.builderstrom.user.repository.retrofit.modals.CompanyDocument;
-import com.builderstrom.user.repository.retrofit.modals.CompanyStatus;
+import com.builderstrom.user.data.retrofit.modals.CatListing;
+import com.builderstrom.user.data.retrofit.modals.CompanyDocument;
+import com.builderstrom.user.data.retrofit.modals.CompanyStatus;
 import com.builderstrom.user.utils.CommonMethods;
 import com.builderstrom.user.utils.PermissionUtils;
 import com.builderstrom.user.viewmodels.CompanyViewModel;

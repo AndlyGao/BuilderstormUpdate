@@ -18,7 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.builderstrom.user.R;
 import com.builderstrom.user.views.activities.BaseActivity;
 import com.builderstrom.user.views.activities.ImageFullScreenActivity;
-import com.builderstrom.user.repository.retrofit.modals.RfiFileModel;
+import com.builderstrom.user.data.retrofit.modals.RfiFileModel;
 import com.builderstrom.user.utils.CommonMethods;
 
 import java.util.List;

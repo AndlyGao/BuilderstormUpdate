@@ -7,7 +7,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.modals.MyItemsStatusModel;
+import com.builderstrom.user.data.retrofit.modals.MyItemsStatusModel;
 import com.builderstrom.user.views.adapters.MyItemsStatusListAdapter;
 
 import java.util.ArrayList;

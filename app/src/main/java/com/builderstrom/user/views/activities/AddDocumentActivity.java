@@ -22,7 +22,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
@@ -33,11 +32,10 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.api.DataNames;
-import com.builderstrom.user.repository.retrofit.modals.CatListing;
-import com.builderstrom.user.repository.retrofit.modals.DocumentStatus;
-import com.builderstrom.user.repository.retrofit.modals.PDocsDataModel;
-import com.builderstrom.user.repository.retrofit.modals.Snag;
+import com.builderstrom.user.data.retrofit.api.DataNames;
+import com.builderstrom.user.data.retrofit.modals.CatListing;
+import com.builderstrom.user.data.retrofit.modals.DocumentStatus;
+import com.builderstrom.user.data.retrofit.modals.PDocsDataModel;
 import com.builderstrom.user.utils.BuilderStormApplication;
 import com.builderstrom.user.utils.CommonMethods;
 import com.builderstrom.user.utils.PermissionUtils;

@@ -7,7 +7,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.modals.TaskListing;
+import com.builderstrom.user.data.retrofit.modals.TaskListing;
 import com.builderstrom.user.views.adapters.TimeSheetTaskAdapter;
 import com.builderstrom.user.views.viewInterfaces.TaskReturnInterface;
 

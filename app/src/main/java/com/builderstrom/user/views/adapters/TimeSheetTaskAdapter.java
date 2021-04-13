@@ -9,7 +9,7 @@ import android.widget.CheckBox;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.modals.TaskListing;
+import com.builderstrom.user.data.retrofit.modals.TaskListing;
 import java.util.ArrayList;
 import java.util.List;
 

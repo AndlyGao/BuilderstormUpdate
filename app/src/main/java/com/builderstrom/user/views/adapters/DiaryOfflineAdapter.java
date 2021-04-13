@@ -15,8 +15,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.modals.DiaryData;
-import com.builderstrom.user.repository.retrofit.modals.DiaryManLabour;
+import com.builderstrom.user.data.retrofit.modals.DiaryData;
+import com.builderstrom.user.data.retrofit.modals.DiaryManLabour;
 import com.builderstrom.user.utils.BuilderStormApplication;
 import com.builderstrom.user.views.activities.AddDiary;
 import com.builderstrom.user.views.activities.ImageFullScreenActivity;

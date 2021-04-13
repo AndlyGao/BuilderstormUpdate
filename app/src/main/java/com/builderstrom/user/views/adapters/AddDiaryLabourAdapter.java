@@ -16,19 +16,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.Prefs;
-import com.builderstrom.user.repository.retrofit.api.DataNames;
-import com.builderstrom.user.repository.retrofit.modals.DiaryLabourModel;
-import com.builderstrom.user.repository.retrofit.modals.ErrorModel;
-import com.builderstrom.user.repository.retrofit.modals.PojoCostCode;
-import com.builderstrom.user.repository.retrofit.modals.ProjectHoursModel;
+import com.builderstrom.user.data.retrofit.api.DataNames;
+import com.builderstrom.user.data.retrofit.modals.DiaryLabourModel;
+import com.builderstrom.user.data.retrofit.modals.ErrorModel;
+import com.builderstrom.user.data.retrofit.modals.PojoCostCode;
+import com.builderstrom.user.data.retrofit.modals.ProjectHoursModel;
 import com.builderstrom.user.utils.CommonMethods;
 import com.builderstrom.user.viewmodels.DiaryViewModel;
 import com.builderstrom.user.views.activities.AddDiary;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;

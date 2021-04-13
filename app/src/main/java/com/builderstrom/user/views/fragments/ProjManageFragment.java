@@ -14,8 +14,8 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.api.DataNames;
-import com.builderstrom.user.repository.retrofit.modals.ProjectDetails;
+import com.builderstrom.user.data.retrofit.api.DataNames;
+import com.builderstrom.user.data.retrofit.modals.ProjectDetails;
 import com.builderstrom.user.viewmodels.PMViewModel;
 import com.builderstrom.user.views.activities.BaseActivity;
 import com.builderstrom.user.views.adapters.PMAdapter;

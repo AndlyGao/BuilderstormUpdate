@@ -4,8 +4,8 @@ import android.app.Application;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 
-import com.builderstrom.user.repository.Prefs;
-import com.builderstrom.user.repository.database.DatabaseHelper;
+import com.builderstrom.user.data.Prefs;
+import com.builderstrom.user.data.database.DatabaseHelper;
 import com.builderstrom.user.views.offlineToOnline.NetworkChangeReceiver;
 
 public class BuilderStormApplication extends Application {
@@ -24,14 +24,13 @@ public class BuilderStormApplication extends Application {
             mPrefs = Prefs.with(getApplicationContext());
         }
         if (null == mLocalDatabase) {
-            mLocalDatabase = new DatabaseHelper(getApplicationContext());
+            mLocalDatabase = DatabaseHelper.getDatabaseInstance(getApplicationContext());
         }
 
         /* for global receiver*/
         registerReceiver(mNetworkReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
 
     }
-
 
 
 }

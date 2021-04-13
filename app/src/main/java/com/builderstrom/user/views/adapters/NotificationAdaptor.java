@@ -13,8 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.modals.NotificationIconModel;
-import com.builderstrom.user.repository.retrofit.modals.NotificationListModel;
+import com.builderstrom.user.data.retrofit.modals.NotificationIconModel;
+import com.builderstrom.user.data.retrofit.modals.NotificationListModel;
 import com.builderstrom.user.utils.CommonMethods;
 
 import java.util.List;

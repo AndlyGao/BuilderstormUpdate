@@ -1,7 +1,6 @@
 package com.builderstrom.user.views.adapters;
 
 import android.content.Context;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.modals.GalleryPicModel;
+import com.builderstrom.user.data.retrofit.modals.GalleryPicModel;
 import com.builderstrom.user.utils.GlideApp;
-import com.bumptech.glide.annotation.GlideModule;
 
 import java.util.List;
 

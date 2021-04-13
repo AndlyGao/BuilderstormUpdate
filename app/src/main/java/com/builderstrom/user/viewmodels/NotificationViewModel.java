@@ -5,12 +5,12 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 
-import com.builderstrom.user.repository.retrofit.api.ErrorCodes;
-import com.builderstrom.user.repository.retrofit.api.RestClient;
-import com.builderstrom.user.repository.retrofit.modals.ErrorModel;
-import com.builderstrom.user.repository.retrofit.modals.NotificationDataModel;
-import com.builderstrom.user.repository.retrofit.modals.NotificationListModel;
-import com.builderstrom.user.repository.retrofit.modals.PojoSuccessCommon;
+import com.builderstrom.user.data.retrofit.api.ErrorCodes;
+import com.builderstrom.user.data.retrofit.api.RestClient;
+import com.builderstrom.user.data.retrofit.modals.ErrorModel;
+import com.builderstrom.user.data.retrofit.modals.NotificationDataModel;
+import com.builderstrom.user.data.retrofit.modals.NotificationListModel;
+import com.builderstrom.user.data.retrofit.modals.PojoSuccessCommon;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;

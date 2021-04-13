@@ -5,19 +5,9 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 
-import com.builderstrom.user.repository.retrofit.api.ErrorCodes;
-import com.builderstrom.user.repository.retrofit.api.RestClient;
-import com.builderstrom.user.repository.retrofit.modals.ErrorModel;
-import com.builderstrom.user.repository.retrofit.modals.NotificationDataModel;
-import com.builderstrom.user.repository.retrofit.modals.NotificationListModel;
-import com.google.gson.Gson;
+import com.builderstrom.user.data.retrofit.modals.NotificationListModel;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class ShortDocsViewModel extends BaseViewModel {
     public MutableLiveData<Boolean> isSuccess;

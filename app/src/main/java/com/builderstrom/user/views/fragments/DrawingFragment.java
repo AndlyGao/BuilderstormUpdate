@@ -22,8 +22,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.api.DataNames;
-import com.builderstrom.user.repository.retrofit.modals.Datum;
+import com.builderstrom.user.data.retrofit.api.DataNames;
+import com.builderstrom.user.data.retrofit.modals.Datum;
 import com.builderstrom.user.service.DownloadTask;
 import com.builderstrom.user.service.SyncAllDrawingTask;
 import com.builderstrom.user.utils.BuilderStormApplication;

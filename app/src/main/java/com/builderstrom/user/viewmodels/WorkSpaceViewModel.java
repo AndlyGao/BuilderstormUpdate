@@ -1,33 +1,33 @@
 package com.builderstrom.user.viewmodels;
 
-import android.annotation.SuppressLint;
 import android.app.Application;
-import android.os.AsyncTask;
+import android.os.Handler;
+import android.os.Looper;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 
-import com.builderstrom.user.repository.database.databaseModels.Domain;
-import com.builderstrom.user.repository.retrofit.api.DataNames;
-import com.builderstrom.user.repository.retrofit.api.ErrorCodes;
-import com.builderstrom.user.repository.retrofit.api.RestClient;
-import com.builderstrom.user.repository.retrofit.modals.ErrorModel;
-import com.builderstrom.user.repository.retrofit.modals.WorkspaceModel;
+import com.builderstrom.user.data.database.databaseModels.Domain;
+import com.builderstrom.user.data.repositories.WorkSpaceRepository;
+import com.builderstrom.user.data.repositoryCallbacks.AccessWorkSpace;
+import com.builderstrom.user.data.retrofit.api.DataNames;
+import com.builderstrom.user.data.retrofit.modals.ErrorModel;
+import com.builderstrom.user.data.retrofit.modals.WorkspaceModel;
 import com.builderstrom.user.utils.CommonMethods;
-import com.google.gson.Gson;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
-@SuppressLint("StaticFieldLeak")
+//@SuppressLint("StaticFieldLeak")
 public class WorkSpaceViewModel extends BaseViewModel {
 
     public MutableLiveData<Integer> redirectLD;
-    private String TAG = WorkSpaceViewModel.class.getName();
+    private final String TAG = WorkSpaceViewModel.class.getName();
+    public WorkSpaceRepository repository;
 
     public WorkSpaceViewModel(@NonNull Application application) {
         super(application);
+        repository = new WorkSpaceRepository(application);
         redirectLD = new MutableLiveData<>();
     }
 
@@ -35,48 +35,49 @@ public class WorkSpaceViewModel extends BaseViewModel {
         setLogs(TAG, "BEGIN ", "APP_VERSION:" + CommonMethods.getAppVersion(getApplication()));
         setLogs(TAG, "BEGIN ", "baseURL: " + domain.toUpperCase());
 
-
         mPrefs.setBaseSite(domain);
         isLoadingLD.postValue(true);
-//        RestClient.getWorkspaceClient().workspace(domain, CommonMethods.getDeviceID(getApplication())).enqueue(
-        RestClient.createService().workspace(domain, CommonMethods.getDeviceID(getApplication())).enqueue(
-                new Callback<WorkspaceModel>() {
-                    @Override
-                    public void onResponse(@NonNull Call<WorkspaceModel> call, @NonNull Response<WorkspaceModel> response) {
-                        setLogs(TAG, "callAuthenticateAPI", new Gson().toJson(response));
-                        try {
-                            if (ErrorCodes.checkCode(response.code()) && null != response.body()) {
-                                updateDomains(domain, response.body());
-                            } else {
-                                isLoadingLD.postValue(false);
-                                mPrefs.setBaseSite("");
-                                handleErrorBody(response.errorBody());
-                            }
-                        } catch (Exception e) {
-                            isLoadingLD.postValue(false);
-                            mPrefs.setBaseSite("");
-                            errorModelLD.postValue(new ErrorModel(e, e.getLocalizedMessage()));
-                        }
-                    }
+        repository.accessWorkSpace(domain, CommonMethods.getDeviceID(getApplication()), new AccessWorkSpace() {
+            @Override
+            public void onWorkSpaceAccess(String domainName, WorkspaceModel workspaceModel) {
+                updateDomains(domainName, workspaceModel);
+            }
 
-                    @Override
-                    public void onFailure(@NonNull Call<WorkspaceModel> call, @NonNull Throwable t) {
-                        setLogs(TAG, "callAuthenticateAPI", t.getLocalizedMessage());
-                        if (CommonMethods.isNetworkError(t)) {
-                            offlineDomainAccess(domain);
-                        } else {
-                            isLoadingLD.postValue(false);
-                            mPrefs.setBaseSite("");
-                            errorModelLD.postValue(new ErrorModel(t, t.getLocalizedMessage()));
+            @Override
+            public void onNetworkError() {
+                offlineDomainAccess(domain);
+            }
 
-                        }
-                    }
-                });
+            @Override
+            public void onError(ErrorModel error) {
+                isLoadingLD.postValue(false);
+                errorModelLD.postValue(error);
+            }
+        });
     }
 
     /* Database operations */
     private void updateDomains(String baseSite, WorkspaceModel model) {
-        new AsyncTask<Void, Void, Domain>() {
+        ExecutorService service = Executors.newSingleThreadExecutor();
+        Handler domainHandler = new Handler(Looper.getMainLooper());
+        service.execute(() -> {
+            mPrefs.setAuthToken(model.getAuthToken());
+            mPrefs.setSiteId(model.getData().getSiteId() == null ? "" : model.getData().getSiteId());
+            mPrefs.setWorkSpaceLogo(model.getData().getLogo());
+            Domain domain = mDatabase.getDomain(baseSite);
+
+            domainHandler.post(() -> {
+                if (domain != null) {
+                    mDatabase.updateDomain(baseSite, model.getData().getSiteId() == null ? "" : model.getData().getSiteId());
+                } else {
+                    mDatabase.insertDomain(baseSite, model.getData().getSiteId() == null ? "" : model.getData().getSiteId());
+                }
+                redirectToLogin();
+            });
+
+        });
+
+     /*   new AsyncTask<Void, Void, Domain>() {
             @Override
             protected Domain doInBackground(Void... voids) {
                 mPrefs.setAuthToken(model.getAuthToken());
@@ -95,11 +96,35 @@ public class WorkSpaceViewModel extends BaseViewModel {
                 }
                 redirectToLogin();
             }
-        }.execute();
+        }.execute();*/
     }
 
     private void offlineDomainAccess(String clientURL) {
         try {
+            ExecutorService service = Executors.newSingleThreadExecutor();
+            Handler domainHandler = new Handler(Looper.getMainLooper());
+            service.execute(() -> {
+                Domain domain = mDatabase.getDomain(clientURL);
+
+                domainHandler.post(() -> {
+                    if (domain != null && domain.getSiteID() != null && !domain.getSiteID().isEmpty()) {
+                        mPrefs.setSiteId(domain.getSiteID());
+                        mPrefs.setBaseSite(clientURL);
+                        redirectToLogin();
+                    } else {
+                        isLoadingLD.postValue(false);
+                        mPrefs.setBaseSite("");
+                        errorModelLD.postValue(new ErrorModel(DataNames.TYPE_ERROR_API, "Workspace not found"));
+                    }
+                });
+
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+      /*  try {
             new AsyncTask<Void, Void, Domain>() {
                 @Override
                 protected Domain doInBackground(Void... voids) {
@@ -123,11 +148,26 @@ public class WorkSpaceViewModel extends BaseViewModel {
             }.execute();
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     private void redirectToLogin() {
         if (!mPrefs.getUserId().isEmpty() && !mPrefs.getSiteId().isEmpty()) {
+            ExecutorService service = Executors.newSingleThreadExecutor();
+            Handler domainHandler = new Handler(Looper.getMainLooper());
+            service.execute(() -> {
+                boolean alreadyLogin = mDatabase.getLoginPin(mPrefs.getUserId(), mPrefs.getSiteId());
+                domainHandler.post(() -> {
+                    isLoadingLD.postValue(false);
+                    redirectLD.postValue(alreadyLogin ? 1 : 2);
+                });
+            });
+        } else {
+            isLoadingLD.postValue(false);
+            redirectLD.postValue(2);
+        }
+
+      /*  if (!mPrefs.getUserId().isEmpty() && !mPrefs.getSiteId().isEmpty()) {
             new AsyncTask<Void, Void, Boolean>() {
                 @Override
                 protected Boolean doInBackground(Void... voids) {
@@ -146,7 +186,7 @@ public class WorkSpaceViewModel extends BaseViewModel {
         } else {
             isLoadingLD.postValue(false);
             redirectLD.postValue(2);
-        }
+        }*/
     }
 
 }

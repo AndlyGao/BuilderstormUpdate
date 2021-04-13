@@ -24,7 +24,7 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.api.DataNames;
+import com.builderstrom.user.data.retrofit.api.DataNames;
 import com.builderstrom.user.utils.BuilderStormApplication;
 import com.builderstrom.user.utils.ClientLogger;
 import com.builderstrom.user.utils.CommonMethods;
@@ -39,6 +39,8 @@ import butterknife.OnClick;
  * and redirect user to appropriate screen.
  */
 public class SplashActivity extends BaseActivity {
+
+
     private static final String TAG = SplashActivity.class.getName();
     @BindView(R.id.btnLogin) Button btnLogin;
     @BindView(R.id.btnLearnMore) Button btnLearnMore;

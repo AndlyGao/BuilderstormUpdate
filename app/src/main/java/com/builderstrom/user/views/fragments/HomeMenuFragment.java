@@ -21,12 +21,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.api.DataNames;
-import com.builderstrom.user.repository.retrofit.modals.DashBoardMenuModel;
-import com.builderstrom.user.repository.retrofit.modals.LoginModel;
-import com.builderstrom.user.repository.retrofit.modals.OverTimeModel;
-import com.builderstrom.user.repository.retrofit.modals.ProjectDetails;
-import com.builderstrom.user.repository.retrofit.modals.RecentCategory;
+import com.builderstrom.user.data.retrofit.api.DataNames;
+import com.builderstrom.user.data.retrofit.modals.DashBoardMenuModel;
+import com.builderstrom.user.data.retrofit.modals.LoginModel;
+import com.builderstrom.user.data.retrofit.modals.OverTimeModel;
+import com.builderstrom.user.data.retrofit.modals.ProjectDetails;
+import com.builderstrom.user.data.retrofit.modals.RecentCategory;
 import com.builderstrom.user.utils.CommonMethods;
 import com.builderstrom.user.viewmodels.ProjectSignViewModel;
 import com.builderstrom.user.views.activities.BaseActivity;

@@ -9,8 +9,8 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.api.DataNames;
-import com.builderstrom.user.repository.retrofit.modals.Datum;
+import com.builderstrom.user.data.retrofit.api.DataNames;
+import com.builderstrom.user.data.retrofit.modals.Datum;
 import com.builderstrom.user.utils.CommonMethods;
 import com.builderstrom.user.viewmodels.DrawingMenuVM;
 import com.builderstrom.user.views.activities.AddDrawingActivity;

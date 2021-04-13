@@ -11,10 +11,9 @@ import android.util.Log;
 
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
-import com.builderstrom.user.repository.database.DatabaseHelper;
-import com.builderstrom.user.repository.retrofit.api.DataNames;
-import com.builderstrom.user.repository.retrofit.modals.PojoAttachment;
-import com.builderstrom.user.repository.retrofit.modals.Rfi;
+import com.builderstrom.user.data.retrofit.api.DataNames;
+import com.builderstrom.user.data.retrofit.modals.PojoAttachment;
+import com.builderstrom.user.data.retrofit.modals.Rfi;
 import com.builderstrom.user.utils.BuilderStormApplication;
 import com.builderstrom.user.utils.CommonMethods;
 import com.google.gson.Gson;

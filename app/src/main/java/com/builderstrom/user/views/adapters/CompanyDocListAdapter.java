@@ -2,7 +2,6 @@ package com.builderstrom.user.views.adapters;
 
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,9 +16,9 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.api.DataNames;
-import com.builderstrom.user.repository.retrofit.modals.CompanyDocument;
-import com.builderstrom.user.repository.retrofit.modals.PDocsDataModel;
+import com.builderstrom.user.data.retrofit.api.DataNames;
+import com.builderstrom.user.data.retrofit.modals.CompanyDocument;
+import com.builderstrom.user.data.retrofit.modals.PDocsDataModel;
 import com.builderstrom.user.utils.CommonMethods;
 import com.builderstrom.user.utils.PermissionUtils;
 import com.builderstrom.user.viewmodels.CompanyViewModel;
@@ -28,7 +27,6 @@ import com.builderstrom.user.views.dialogFragments.CompanyDocActionDialogFragmen
 import com.builderstrom.user.views.dialogFragments.CompanyMoreInfoDialogFragment;
 import com.builderstrom.user.views.fragments.CompanyDocListFragment;
 import com.builderstrom.user.views.viewInterfaces.UpdateCompanyDocsListing;
-import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;

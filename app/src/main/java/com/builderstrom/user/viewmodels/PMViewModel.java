@@ -7,13 +7,13 @@ import android.os.AsyncTask;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 
-import com.builderstrom.user.repository.retrofit.api.ErrorCodes;
-import com.builderstrom.user.repository.retrofit.api.RestClient;
-import com.builderstrom.user.repository.retrofit.modals.ErrorModel;
-import com.builderstrom.user.repository.retrofit.modals.PMNotesModel;
-import com.builderstrom.user.repository.retrofit.modals.ProjectDetails;
-import com.builderstrom.user.repository.retrofit.modals.ProjectListModel;
-import com.builderstrom.user.repository.retrofit.modals.ProjectNote;
+import com.builderstrom.user.data.retrofit.api.ErrorCodes;
+import com.builderstrom.user.data.retrofit.api.RestClient;
+import com.builderstrom.user.data.retrofit.modals.ErrorModel;
+import com.builderstrom.user.data.retrofit.modals.PMNotesModel;
+import com.builderstrom.user.data.retrofit.modals.ProjectDetails;
+import com.builderstrom.user.data.retrofit.modals.ProjectListModel;
+import com.builderstrom.user.data.retrofit.modals.ProjectNote;
 import com.google.gson.Gson;
 
 import java.util.List;

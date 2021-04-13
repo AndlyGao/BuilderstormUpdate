@@ -16,7 +16,7 @@ import com.builderstrom.user.R;
 import com.builderstrom.user.views.activities.BaseActivity;
 import com.builderstrom.user.views.activities.DigitalFormActivity;
 import com.builderstrom.user.views.customViews.toolTip.Tooltip;
-import com.builderstrom.user.repository.retrofit.modals.DigitalDoc;
+import com.builderstrom.user.data.retrofit.modals.DigitalDoc;
 
 import java.util.List;
 

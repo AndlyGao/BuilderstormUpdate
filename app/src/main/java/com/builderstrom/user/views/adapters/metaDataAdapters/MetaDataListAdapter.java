@@ -21,10 +21,10 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.builderstrom.user.R;
-import com.builderstrom.user.repository.retrofit.api.RestClient;
-import com.builderstrom.user.repository.retrofit.modals.LocalMetaValues;
-import com.builderstrom.user.repository.retrofit.modals.MetaDataField;
-import com.builderstrom.user.repository.retrofit.modals.MetaOptions;
+import com.builderstrom.user.data.retrofit.api.RestClient;
+import com.builderstrom.user.data.retrofit.modals.LocalMetaValues;
+import com.builderstrom.user.data.retrofit.modals.MetaDataField;
+import com.builderstrom.user.data.retrofit.modals.MetaOptions;
 import com.builderstrom.user.utils.CommonMethods;
 import com.builderstrom.user.utils.GlideApp;
 import com.builderstrom.user.views.activities.BaseActivity;
