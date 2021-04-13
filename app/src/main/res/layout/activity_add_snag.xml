@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/ll_Main"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:padding="@dimen/dp_22"
+            android:visibility="visible">
+
+            <com.builderstrom.user.views.customViews.textChips.NachoTextView
+                android:id="@+id/tvAutoUsers"
+                style="@style/nachoEditTextStyle"
+                android:hint="@string/select_to_users"
+                app:chipBackground="@color/colorChipBack"
+                app:chipHeight="@dimen/dp_24"
+                app:chipHorizontalSpacing="@dimen/dimen_4"
+                app:chipTextColor="@android:color/black"
+                app:chipTextSize="14sp"
+                app:chipVerticalSpacing="3dp" />
+
+
+            <com.builderstrom.user.views.customViews.textChips.NachoTextView
+                android:id="@+id/tvAutoCCUsers"
+                style="@style/nachoEditTextStyle"
+                android:layout_marginTop="@dimen/dimen_8"
+                android:hint="@string/select_cc_users"
+                app:chipBackground="@color/colorChipBack"
+                app:chipHeight="@dimen/dp_24"
+                app:chipHorizontalSpacing="@dimen/dimen_4"
+                app:chipTextColor="@android:color/black"
+                app:chipTextSize="14sp"
+                app:chipVerticalSpacing="3dp" />
+
+            <EditText
+                android:id="@+id/etLocation"
+                style="@style/commonEditTextStyle"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/edit_text_background"
+                android:hint="@string/location"
+                android:inputType="text"
+                android:nextFocusDown="@+id/etDescriptionRFI"
+                tools:ignore="Autofill" />
+
+            <EditText
+                android:id="@+id/etPackNo"
+                style="@style/commonEditTextStyle"
+                android:layout_marginTop="@dimen/dp_10"
+                android:hint="@string/sub_contract_pack"
+                android:inputType="number"
+                android:nextFocusDown="@+id/etDescriptionRFI"
+                tools:ignore="Autofill" />
+
+
+            <EditText
+                android:id="@+id/etTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/edit_text_background"
+                android:hint="@string/title"
+                android:inputType="text"
+                android:maxLines="1"
+                android:nextFocusDown="@+id/etDescriptionRFI"
+                android:padding="10dp"
+                android:textColor="@color/primary_text_color"
+                android:textColorHint="@color/secondary_text_color"
+                android:visibility="gone"
+                tools:ignore="Autofill" />
+
+            <EditText
+                android:id="@+id/etDescription"
+                style="@style/commonBigEditTextStyle"
+                android:layout_marginTop="@dimen/dp_10"
+                android:hint="@string/description"
+                android:inputType="textMultiLine"
+                tools:ignore="Autofill" />
+
+
+            <EditText
+                android:id="@+id/etDate"
+                style="@style/dropDownEditTextStyle"
+                android:layout_marginTop="@dimen/dp_10"
+                android:drawableEnd="@drawable/ic_calendar"
+                android:hint="@string/due_date"
+                android:inputType="datetime"
+                android:longClickable="false"
+                tools:ignore="Autofill" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnUpload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/uploadbg"
+                android:drawableStart="@drawable/ic_file_upload"
+                android:gravity="center"
+                android:paddingStart="25dp"
+                android:paddingEnd="25dp"
+                android:text="@string/upload"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_8"
+                android:nestedScrollingEnabled="false"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/dimen_16"
+                android:background="@drawable/drawingbg"
+                android:paddingStart="@dimen/dimen_80"
+                android:paddingEnd="@dimen/dimen_80"
+                android:text="@string/submit"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white" />
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>
+
+
+
+

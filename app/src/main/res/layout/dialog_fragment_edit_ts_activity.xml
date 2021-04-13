@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:padding="@dimen/dimen_16">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="@dimen/dimen_4">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl_Header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_8"
+                android:background="@drawable/custom_dialog_header"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/dimen_8">
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:padding="@dimen/dimen_8"
+                    android:text="Edit Activity"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/ivClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:contentDescription="@string/workspace"
+                    android:padding="@dimen/dimen_8"
+                    android:src="@drawable/deleteicon" />
+
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- Work time-->
+                <LinearLayout
+                    android:id="@+id/llOverTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dimen_8"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/etWorkStartTime"
+                        style="@style/timePicEditTextStyle"
+                        android:layout_margin="@dimen/dimen_4"
+                        android:hint="@string/start_time"
+                        android:inputType="datetime" />
+
+                    <EditText
+                        android:id="@+id/etWorkEndTime"
+                        style="@style/timePicEditTextStyle"
+                        android:layout_margin="@dimen/dimen_4"
+                        android:hint="@string/end_time"
+                        android:inputType="datetime" />
+
+                    <EditText
+                        android:id="@+id/etWorkHours"
+                        style="@style/commonEditTextStyle"
+                        android:layout_margin="@dimen/dimen_4"
+                        android:hint="Total Hours"
+                        android:inputType="number"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tvWorkTask"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimen_4"
+                        android:background="@drawable/edittextborder"
+                        android:drawableEnd="@drawable/ic_arrow_drop"
+                        android:hint="@string/select_task"
+                        android:padding="8dp" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnOvertimeSave"
+                        style="@style/blueButtonStyle"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="@dimen/dimen_8"
+                        android:text="@string/update" />
+
+                </LinearLayout>
+
+                <!-- Travel -->
+                <LinearLayout
+                    android:id="@+id/llTravel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dimen_8"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/etTravelStartTime"
+                        style="@style/timePicEditTextStyle"
+                        android:layout_margin="@dimen/dimen_4"
+                        android:hint="@string/start_time"
+                        android:inputType="datetime" />
+
+                    <EditText
+                        android:id="@+id/etTravelFrom"
+                        style="@style/dropDownEditTextStyle"
+                        android:layout_margin="@dimen/dimen_4"
+                        android:hint="@string/to"
+                        android:inputType="text" />
+
+                    <EditText
+                        android:id="@+id/etTravelEndTime"
+                        style="@style/timePicEditTextStyle"
+                        android:layout_margin="@dimen/dimen_4"
+                        android:hint="@string/end_time"
+                        android:inputType="datetime" />
+
+                    <EditText
+                        android:id="@+id/etTravelTo"
+                        style="@style/dropDownEditTextStyle"
+                        android:layout_margin="@dimen/dimen_4"
+                        android:hint="@string/from"
+                        android:inputType="text" />
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnTravelSave"
+                        style="@style/blueButtonStyle"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="@dimen/dimen_8"
+                        android:text="@string/update" />
+
+                </LinearLayout>
+
+                <!-- Breaks -->
+                <LinearLayout
+                    android:id="@+id/llBreaks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dimen_8"
+                    android:visibility="gone">
+
+
+                    <EditText
+                        android:id="@+id/etBreakStartTime"
+                        style="@style/timePicEditTextStyle"
+                        android:layout_margin="@dimen/dimen_4"
+                        android:hint="@string/start_time"
+                        android:inputType="datetime" />
+
+                    <EditText
+                        android:id="@+id/etBreakEndTime"
+                        style="@style/timePicEditTextStyle"
+                        android:layout_margin="@dimen/dimen_4"
+                        android:hint="@string/end_time"
+                        android:inputType="datetime" />
+
+                    <EditText
+                        android:id="@+id/etBreakTime"
+                        style="@style/commonEditTextStyle"
+                        android:layout_margin="@dimen/dimen_4"
+                        android:hint="Break Time: (In minutes)"
+                        android:inputType="datetime" />
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnBreakSave"
+                        style="@style/blueButtonStyle"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginEnd="@dimen/dimen_8"
+                        android:text="@string/update" />
+
+
+                </LinearLayout>
+
+                <!-- Expenses -->
+                <LinearLayout
+                    android:id="@+id/llExpenses"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dimen_8"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/etExpenseItem"
+                        style="@style/commonEditTextStyle"
+                        android:layout_margin="@dimen/dimen_4"
+                        android:hint="Item: "
+                        android:inputType="text" />
+
+                    <EditText
+                        android:id="@+id/etExpenseCost"
+                        style="@style/commonEditTextStyle"
+                        android:layout_margin="@dimen/dimen_4"
+                        android:hint="Cost : "
+                        android:inputType="number" />
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnExpenseSave"
+                        style="@style/blueButtonStyle"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="@dimen/dimen_8"
+                        android:text="@string/update" />
+
+                </LinearLayout>
+
+                <!-- PriceWork  -->
+                <LinearLayout
+                    android:id="@+id/llPriceWork"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dimen_8"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvPriceWorkItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimen_4"
+                        android:background="@drawable/edittextborder"
+                        android:drawableEnd="@drawable/ic_arrow_drop"
+                        android:hint="@string/select_item"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:id="@+id/tvPriceItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimen_4"
+                        android:hint="@string/select_item"
+                        android:padding="8dp" />
+
+                    <EditText
+                        android:id="@+id/etPriceWorkLocation"
+                        style="@style/commonEditTextStyle"
+                        android:layout_margin="@dimen/dimen_4"
+                        android:hint="Location: "
+                        android:inputType="text" />
+
+                    <EditText
+                        android:id="@+id/etPriceWorkQuantity"
+                        style="@style/commonEditTextStyle"
+                        android:layout_margin="@dimen/dimen_4"
+                        android:hint="Quantity: "
+                        android:inputType="number" />
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnPriceSave"
+                        style="@style/blueButtonStyle"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="@dimen/dimen_8"
+                        android:text="@string/update" />
+
+                </LinearLayout>
+
+                <!-- Holiday   -->
+                <LinearLayout
+                    android:id="@+id/llHoliday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dimen_8"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/etHolidayStartTime"
+                        style="@style/timePicEditTextStyle"
+                        android:layout_margin="@dimen/dimen_4"
+                        android:hint="@string/start_time"
+                        android:inputType="text"
+                        tools:ignore="Autofill" />
+
+                    <EditText
+                        android:id="@+id/etHolidayEndTime"
+                        style="@style/timePicEditTextStyle"
+                        android:layout_margin="@dimen/dimen_4"
+                        android:hint="@string/end_time"
+                        android:inputType="time"
+                        tools:ignore="Autofill" />
+
+                    <EditText
+                        android:id="@+id/etHolidayHours"
+                        style="@style/commonEditTextStyle"
+                        android:layout_margin="@dimen/dimen_4"
+                        android:hint="@string/no_of_hours"
+                        android:inputType="number"
+                        tools:ignore="Autofill" />
+
+                    <EditText
+                        android:id="@+id/etHolidayDuration"
+                        style="@style/commonEditTextStyle"
+                        android:layout_margin="@dimen/dimen_4"
+                        android:hint="Duration :  ( No. of days)  "
+                        android:inputType="time"
+                        tools:ignore="Autofill" />
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnHolidaySave"
+                        style="@style/blueButtonStyle"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginEnd="@dimen/dimen_8"
+                        android:layout_weight="1"
+                        android:text="@string/update" />
+
+
+                </LinearLayout>
+
+                <!-- Sickness -->
+                <LinearLayout
+                    android:id="@+id/llSickness"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dimen_8"
+                    android:visibility="gone">
+
+
+                    <EditText
+                        android:id="@+id/etSickStartTime"
+                        style="@style/timePicEditTextStyle"
+                        android:layout_margin="@dimen/dimen_4"
+                        android:hint="@string/start_time"
+                        android:inputType="time" />
+
+                    <EditText
+                        android:id="@+id/etSickEndTime"
+                        style="@style/timePicEditTextStyle"
+                        android:layout_margin="@dimen/dimen_4"
+                        android:hint="@string/end_time"
+                        android:inputType="time" />
+
+                    <EditText
+                        android:id="@+id/etSickHours"
+                        style="@style/commonEditTextStyle"
+                        android:layout_margin="@dimen/dimen_4"
+                        android:hint="@string/no_of_hours"
+                        android:inputType="number"
+                        tools:ignore="Autofill" />
+
+                    <EditText
+                        android:id="@+id/etSickDuration"
+                        style="@style/commonEditTextStyle"
+                        android:layout_margin="@dimen/dimen_4"
+                        android:hint="Duration :  ( No. of days)  "
+                        android:inputType="number" />
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnSickSave"
+                        style="@style/blueButtonStyle"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginEnd="@dimen/dimen_8"
+                        android:layout_weight="1"
+                        android:text="@string/update" />
+
+
+                </LinearLayout>
+
+                <!-- Note -->
+                <LinearLayout
+                    android:id="@+id/llNote"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dimen_8"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/etNote"
+                        style="@style/commonEditTextStyle"
+                        android:layout_margin="@dimen/dimen_4"
+                        android:gravity="start"
+                        android:hint="@string/enter_text"
+                        android:maxLines="10"
+                        android:minHeight="@dimen/dimen_100" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnNoteSave"
+                        style="@style/blueButtonStyle"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="@dimen/dimen_8"
+                        android:text="@string/update" />
+
+                </LinearLayout>
+
+            </FrameLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

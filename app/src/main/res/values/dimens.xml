@@ -1,0 +1,70 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+
+    <!-- Margin around the dialog_information_drawings, excluding the button bar -->
+    <!-- Total title margin bottom is 16, but we split this between content and title -->
+
+
+    <dimen name="dp8">6dp</dimen>
+    <dimen name="dp_30">24dp</dimen>
+    <dimen name="dp_16">12dp</dimen>
+    <dimen name="dp_1">1dp</dimen>
+    <dimen name="dp_4">4dp</dimen>
+    <dimen name="dp_72">54dp</dimen>
+    <dimen name="dp_40">36dp</dimen>
+    <dimen name="dp_32">32dp</dimen>
+    <dimen name="dp_50">45dp</dimen>
+    <dimen name="dp_22">18dp</dimen>
+    <dimen name="dp5">5dp</dimen>
+    <dimen name="dp_10">6dp</dimen>
+    <dimen name="dp_68">46dp</dimen>
+
+
+    <!-- TEXT SIZES -->
+    <dimen name="txt_12">12sp</dimen>
+    <dimen name="txt_13">13sp</dimen>
+    <dimen name="txt_14">14sp</dimen>
+    <dimen name="txt_16">16sp</dimen>
+    <dimen name="txt_18">18sp</dimen>
+    <dimen name="txt_20">20sp</dimen>
+    <dimen name="dp_2">2dp</dimen>
+    <dimen name="dp_24">24dp</dimen>
+
+    <dimen name="dimen_1">1dp</dimen>
+    <dimen name="dimen_16">16dp</dimen>
+    <dimen name="dimen_4">4dp</dimen>
+    <dimen name="dimen_8">8dp</dimen>
+    <dimen name="dimen_40">40dp</dimen>
+    <dimen name="dimen_80">80dp</dimen>
+    <dimen name="dimen_12">12dp</dimen>
+    <dimen name="dimen_13">13.5dp</dimen>
+    <dimen name="dimen_100">100dp</dimen>
+    <dimen name="dimen_140">140dp</dimen>
+    <dimen name="dimen_52">52dp</dimen>
+
+
+    <dimen name="chip_default_padding_edge">12dp</dimen>
+    <dimen name="chip_default_padding_between_image">8dp</dimen>
+    <dimen name="chip_default_left_margin">0dp</dimen>
+    <dimen name="chip_default_right_margin">0dp</dimen>
+    <dimen name="dimen_2">2dp</dimen>
+    <dimen name="dimen_48">48dp</dimen>
+
+
+    <dimen name="default_tooltip_margin">0dp</dimen>
+    <dimen name="default_tooltip_padding">5dp</dimen>
+    <dimen name="default_tooltip_arrow_height">10dp</dimen>
+    <dimen name="default_tooltip_arrow_width">16dp</dimen>
+
+    <dimen name="action_button_width">48dp</dimen>
+    <dimen name="action_button_padding">16dp</dimen>
+    <dimen name="dimen_32">32dp</dimen>
+    <dimen name="dimen_28">28dp</dimen>
+    <dimen name="dimen_120">120dp</dimen>
+    <dimen name="dimen_36">36dp</dimen>
+    <dimen name="dimen_6">6dp</dimen>
+    <dimen name="dimen_24">24dp</dimen>
+    <dimen name="dimen_160">160dp</dimen>
+    <dimen name="dimen_240">240dp</dimen>
+</resources>

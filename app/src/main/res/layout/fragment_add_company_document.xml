@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_16">
+
+            <EditText
+                android:id="@+id/etTitle"
+                style="@style/commonEditTextStyle"
+                android:hint="@string/enter_file_title"
+                android:inputType="textPersonName"
+                tools:ignore="Autofill" />
+
+            <EditText
+                android:id="@+id/etStatus"
+                style="@style/dropDownEditTextStyle"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:hint="@string/select_status"
+                android:inputType="textPersonName"
+                tools:ignore="Autofill" />
+
+            <EditText
+                android:id="@+id/etCategory"
+                style="@style/dropDownEditTextStyle"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:hint="@string/select_category"
+                android:inputType="textPersonName"
+                tools:ignore="Autofill" />
+
+            <EditText
+                android:id="@+id/etUploadFile"
+                style="@style/dropDownEditTextStyle"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:drawableEnd="@drawable/ic_attach_file"
+                android:hint="@string/select_your_file"
+                android:inputType="textPersonName"
+                tools:ignore="Autofill" />
+
+            <EditText
+                android:id="@+id/etRevision"
+                style="@style/commonEditTextStyle"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:hint="@string/revision"
+                android:inputType="textPersonName"
+                tools:ignore="Autofill" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/cbRegDocument"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:padding="@dimen/dimen_12"
+                android:text="This document is a Regional Document" />
+
+            <EditText
+                android:id="@+id/etDrawingNo"
+                style="@style/commonEditTextStyle"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:hint="@string/enter_drawing_number"
+                android:inputType="number"
+                tools:ignore="Autofill" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/cbSigned"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:padding="@dimen/dimen_12"
+                android:text="Can be Signed?" />
+
+            <EditText
+                android:id="@+id/etPinComment"
+                style="@style/commonEditTextStyle"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:gravity="start"
+                android:hint="@string/pinned_comment"
+                android:inputType="textMultiLine"
+                android:maxLines="8"
+                android:minHeight="@dimen/dimen_100"
+                tools:ignore="Autofill" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSubmit"
+                style="@style/blueButtonStyle"
+                android:layout_height="@dimen/dimen_48"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/dimen_16"
+                android:minWidth="@dimen/dimen_160"
+                android:text="@string/submit" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

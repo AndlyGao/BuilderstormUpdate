@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dimen_2"
+    android:layout_marginBottom="@dimen/dimen_2"
+    android:background="@color/status_bar"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="@dimen/dimen_4">
+
+
+    <ImageView
+        android:id="@+id/ivSync"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:padding="@dimen/dimen_4"
+        android:src="@drawable/selector_sync" />
+
+    <TextView
+        android:id="@+id/tvTemplate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:maxLines="1"
+        android:paddingStart="@dimen/dimen_4"
+        android:paddingEnd="@dimen/dp_10"
+        android:ellipsize="end"
+        android:textColor="@color/primary_text_color"
+        android:textSize="@dimen/txt_16" />
+
+    <Button
+        android:id="@+id/btnCreateDocument"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:background="@drawable/drawingbg"
+        android:drawableStart="@drawable/ic_cube"
+        android:drawablePadding="15dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="@string/created_document"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:visibility="visible" />
+
+</LinearLayout>
+

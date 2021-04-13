@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llSync"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#D3D3D3"
+    android:orientation="vertical"
+    android:padding="@dimen/dimen_4"
+    android:visibility="visible">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/syncing_all"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2" />
+
+    <ProgressBar
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true" />
+
+</LinearLayout>

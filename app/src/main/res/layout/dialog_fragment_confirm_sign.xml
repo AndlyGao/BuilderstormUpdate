@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/dimen_16"
+        app:cardCornerRadius="@dimen/dimen_4">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_rectangle_accent"
+                    android:paddingStart="@dimen/dimen_16"
+                    android:paddingTop="@dimen/dimen_8"
+                    android:paddingEnd="@dimen/dimen_16"
+                    android:paddingBottom="@dimen/dimen_8"
+                    android:textColor="@color/primary_text_color" />
+
+                <TextView
+                    android:id="@+id/tvMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:layout_marginBottom="@dimen/dimen_16"
+                    android:padding="@dimen/dimen_8"
+                    android:textAlignment="center"
+                    android:textColor="@color/primary_text_color"
+                    android:textSize="@dimen/txt_16" />
+
+                <LinearLayout
+                    android:id="@+id/llMainOvertime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <CheckBox
+                        android:id="@+id/cbOvertime"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/dimen_8"
+                        android:layout_marginEnd="@dimen/dimen_8"
+                        android:padding="@dimen/dimen_8"
+                        android:text="@string/check_overtime" />
+
+                    <RelativeLayout
+                        android:id="@+id/rlOvertime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_8"
+                        android:layout_marginEnd="@dimen/dimen_8"
+                        android:layout_marginBottom="@dimen/dimen_16">
+
+                        <TextView
+                            android:id="@+id/tvOvertime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dimen_8"
+                            android:text="@string/overtime"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:id="@+id/llOvertimeHeader"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvOvertime"
+                            android:gravity="center_vertical">
+
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/dimen_4"
+                                android:visibility="invisible" />
+
+                            <TextView
+                                android:id="@+id/tvStart"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dimen_4"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:padding="@dimen/dimen_8"
+                                android:text="@string/start_time"
+                                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                                android:textColor="@color/primary_text_color"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvEnd"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dimen_4"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:padding="@dimen/dimen_8"
+                                android:text="@string/end_time"
+                                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                                android:textColor="@color/primary_text_color"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/ivAddOvertime"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="@dimen/dimen_8"
+                                android:src="@drawable/ic_add"
+                                tools:ignore="ContentDescription" />
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvOvertime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/llOvertimeHeader"
+                            android:nestedScrollingEnabled="false"
+                            android:orientation="vertical"
+                            android:paddingStart="@dimen/dimen_4"
+                            android:paddingEnd="@dimen/dimen_4"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/llMainBreaks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <CheckBox
+                        android:id="@+id/cbBreaks"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/dimen_8"
+                        android:layout_marginEnd="@dimen/dimen_8"
+                        android:padding="@dimen/dimen_8"
+                        android:text="@string/check_break_taken" />
+
+                    <RelativeLayout
+                        android:id="@+id/rlBreaks"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_8"
+                        android:layout_marginEnd="@dimen/dimen_8"
+                        android:layout_marginBottom="@dimen/dimen_8">
+
+                        <TextView
+                            android:id="@+id/tvBreaks"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dimen_8"
+                            android:text="@string/breaks"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:id="@+id/llBreakHeader"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvBreaks"
+                            android:gravity="center_vertical">
+
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/dimen_4"
+                                android:visibility="invisible" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dimen_4"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:padding="@dimen/dimen_8"
+                                android:text="@string/start_time"
+                                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                                android:textColor="@color/primary_text_color"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dimen_4"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:padding="@dimen/dimen_8"
+                                android:text="@string/end_time"
+                                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                                android:textColor="@color/primary_text_color"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/ivAddBreak"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="@dimen/dimen_8"
+                                android:src="@drawable/ic_add"
+                                tools:ignore="ContentDescription" />
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvBreaks"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/llBreakHeader"
+                            android:nestedScrollingEnabled="false"
+                            android:orientation="vertical"
+                            android:paddingStart="@dimen/dimen_4"
+                            android:paddingEnd="@dimen/dimen_4"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:background="@drawable/bg_rectangle_accent"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp_10">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnConfirm"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/drawable_btn_confirm"
+                        android:drawableStart="@drawable/ic_check_white"
+                        android:gravity="center"
+                        android:padding="@dimen/dp_16"
+                        android:text="@string/confirm"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        android:visibility="visible" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnCancel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_weight="1"
+                        android:background="@drawable/drawable_btn_cancel"
+                        android:drawableStart="@drawable/ic_do_not_disturb_white"
+                        android:padding="@dimen/dp_16"
+                        android:text="@string/cancel"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        android:visibility="visible" />
+
+                    <Button
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@color/guard_unarchive_bg"
+                        android:gravity="center_horizontal"
+                        android:padding="@dimen/dp_16"
+                        android:text="@string/ok"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

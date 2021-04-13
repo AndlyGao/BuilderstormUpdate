@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/dimen_16"
+        app:cardCornerRadius="@dimen/dimen_4">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_rectangle_accent"
+                android:paddingStart="@dimen/dimen_16"
+                android:paddingTop="@dimen/dimen_8"
+                android:paddingEnd="@dimen/dimen_16"
+                android:paddingBottom="@dimen/dimen_8"
+                android:textColor="@color/primary_text_color" />
+
+            <TextView
+                android:id="@+id/tvMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:padding="@dimen/dimen_8"
+                android:text="@string/app_new_version_available"
+                android:textColor="@color/primary_text_color"
+                android:textSize="@dimen/txt_16" />
+
+            <TextView
+                android:id="@+id/tvNew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dimen_8"
+                android:text="Whats new:"
+                android:textAlignment="center"
+                android:textColor="@color/primary_text_color"
+                android:textSize="@dimen/txt_16" />
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_8"
+                android:layout_marginBottom="@dimen/dimen_16"
+                android:padding="@dimen/dimen_8"
+                android:textColor="@color/primary_text_color"
+                android:textSize="@dimen/txt_16" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:background="@drawable/bg_rectangle_accent"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_10">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnConfirm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/drawable_btn_confirm"
+                    android:drawableStart="@drawable/ic_check_white"
+                    android:gravity="center"
+                    android:padding="@dimen/dp_16"
+                    android:text="@string/confirm"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:visibility="visible" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnCancel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:layout_weight="1"
+                    android:background="@drawable/drawable_btn_cancel"
+                    android:drawableStart="@drawable/ic_do_not_disturb_white"
+                    android:padding="@dimen/dp_16"
+                    android:text="@string/cancel"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:visibility="visible" />
+
+                <Button
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/guard_unarchive_bg"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/dp_16"
+                    android:text="@string/ok"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

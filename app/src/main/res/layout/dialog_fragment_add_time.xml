@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/dimen_16"
+        app:cardCornerRadius="@dimen/dimen_4">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_rectangle_accent">
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/dimen_8"
+                    android:padding="@dimen/dimen_4"
+                    android:textColor="@android:color/black" />
+
+                <ImageView
+                    android:id="@+id/ivCancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:padding="@dimen/dimen_8"
+                    android:src="@drawable/deleteicon"
+                    tools:ignore="ContentDescription" />
+
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:layout_marginTop="@dimen/dimen_24"
+                android:layout_marginEnd="@dimen/dimen_16"
+                android:padding="@dimen/dimen_4"
+                android:text="@string/start_time" />
+
+            <TextView
+                android:id="@+id/tvStartTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:layout_marginEnd="@dimen/dimen_16"
+                android:background="@drawable/edit_text_background"
+                android:drawableEnd="@drawable/ic_time"
+                android:gravity="center_vertical"
+                android:hint="@string/start_time"
+                android:padding="@dimen/dimen_6" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:layout_marginEnd="@dimen/dimen_16"
+                android:padding="@dimen/dimen_4"
+                android:text="@string/end_time" />
+
+            <TextView
+                android:id="@+id/tvEndTime"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_36"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:layout_marginEnd="@dimen/dimen_16"
+                android:background="@drawable/edit_text_background"
+                android:drawableEnd="@drawable/ic_time"
+                android:gravity="center_vertical"
+                android:hint="@string/end_time"
+                android:padding="@dimen/dimen_6" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:background="@drawable/bg_rectangle_accent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/dimen_8">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/drawingbg"
+                    android:drawableStart="@drawable/ic_check_white"
+                    android:drawablePadding="@dimen/dimen_8"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/dimen_16"
+                    android:paddingEnd="@dimen/dimen_24"
+                    android:text="@string/save"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnCancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:background="@drawable/drawable_btn_cancel"
+                    android:drawableStart="@drawable/ic_do_not_disturb_white"
+                    android:drawablePadding="@dimen/dimen_8"
+                    android:paddingStart="@dimen/dimen_16"
+                    android:paddingEnd="@dimen/dimen_16"
+                    android:text="@string/cancel"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</FrameLayout>

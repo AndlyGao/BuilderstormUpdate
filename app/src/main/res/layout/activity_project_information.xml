@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:clickable="true"
+    android:focusable="true">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/dimen_16"
+        android:elevation="@dimen/dimen_4"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="@dimen/dimen_4">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/llToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_8"
+                android:background="@drawable/custom_dialog_header"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/dimen_4">
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="@dimen/dimen_8"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/ivClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dimen_8"
+                    android:src="@drawable/deleteicon"
+                    tools:ignore="ContentDescription" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llToolbar"
+                android:layout_margin="@dimen/dimen_8"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvDrawingNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_4"
+                    android:background="@drawable/drawable_base_line"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/dimen_4"
+                    android:text="DrawingNumber : "
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2" />
+
+
+                <TextView
+                    android:id="@+id/tvRevisionStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_4"
+                    android:background="@drawable/drawable_base_line"
+                    android:padding="@dimen/dimen_4"
+                    android:text="Revision Status :"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2" />
+
+                <TextView
+                    android:id="@+id/tvRevision"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_4"
+                    android:background="@drawable/drawable_base_line"
+                    android:padding="@dimen/dimen_4"
+                    android:text="Revision :"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2" />
+
+                <TextView
+                    android:id="@+id/tvCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_4"
+                    android:background="@drawable/drawable_base_line"
+                    android:padding="@dimen/dimen_4"
+                    android:text="Category :"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2" />
+
+
+                <TextView
+                    android:id="@+id/tvStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_4"
+                    android:background="@drawable/drawable_base_line"
+                    android:padding="@dimen/dimen_4"
+                    android:text="Status :"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2" />
+
+
+                <TextView
+                    android:id="@+id/tvCompany"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_4"
+                    android:background="@drawable/drawable_base_line"
+                    android:padding="@dimen/dimen_4"
+                    android:text="Company :"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2" />
+
+                <TextView
+                    android:id="@+id/tvUploader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_4"
+                    android:background="@drawable/drawable_base_line"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/dimen_4"
+                    android:text="Uploader :"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2" />
+
+
+                <TextView
+                    android:id="@+id/tvDateTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_4"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/dimen_4"
+                    android:singleLine="true"
+                    android:text="Date/Time :"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2" />
+            </LinearLayout>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</FrameLayout>

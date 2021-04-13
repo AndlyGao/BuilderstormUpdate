@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.builderstrom.user">
+
+    <uses-feature android:name="android.hardware.location.gps" />
+    <uses-feature
+        android:name="android.hardware.camera.any"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".utils.BuilderStormApplication"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:resizeableActivity="false"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:testOnly="false"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".views.activities.VideoPlayerActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".views.activities.SplashActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashStyle">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".views.activities.WorkSpaceActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.LoginActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.SetPinActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".views.activities.PinLoginActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".views.activities.ForgotCredentialActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".views.activities.DashBoardActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".views.activities.ChangePasswordActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".views.activities.ChangePinActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".views.activities.AddDrawingActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.GetPhotoActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".views.activities.ImageFullScreenActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".views.activities.AddDiary"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".views.activities.AddRFIActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".views.activities.AddSnagActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.AddGalleryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.AddDocumentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.activities.DigitalFormActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".views.activities.DigitalFormActivity" />
+        <!-- fabric metadata -->
+
+        <activity
+            android:name=".views.activities.ScrollableActivity"
+            android:screenOrientation="portrait" /> <!-- fabric metadata -->
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="671d00f2a362c0c47302b1ec28b2f040a69acad3" /> <!-- file providers -->
+        <provider
+            android:name=".utils.LocalStorageProvider"
+            android:authorities="com.builderstrom.user.pickfile.documents"
+            android:exported="true"
+            android:grantUriPermissions="true"
+            android:permission="android.permission.MANAGE_DOCUMENTS">
+            <intent-filter>
+                <action
+                    android:name="android.content.action.DOCUMENTS_PROVIDER"
+                    android:resource="@xml/file_paths" />
+            </intent-filter>
+        </provider>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.builderstrom.user.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/image_paths" />
+        </provider> <!-- global broadcast receiver -->
+        <receiver
+            android:name=".views.offlineToOnline.NetworkChangeReceiver"
+            android:grantUriPermissions="true">
+            <intent-filter>
+                <action
+                    android:name="android.net.conn.CONNECTIVITY_CHANGE"
+                    tools:ignore="BatteryLife" />
+            </intent-filter>
+        </receiver> <!-- services -->
+        <service
+            android:name=".service.SyncAllDrawingTask"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name=".service.DbSyncSchedulerTask"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name=".service.DownloadTask"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name=".service.SyncAllSnagsTask"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name=".service.SyncAllRfiTask"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name=".service.SyncAllCompanyDocsTask"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name=".service.SyncAllProjectDocsTask"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name=".service.SyncAllToDoTask"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service android:name=".service.FBMessagingServices">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_notify" />
+        <!--
+ Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more.
+        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+    </application>
+
+</manifest>

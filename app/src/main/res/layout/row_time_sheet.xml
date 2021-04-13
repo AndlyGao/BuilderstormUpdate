@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/clRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/dimen_2"
+    android:background="@drawable/drawable_base_line">
+
+
+    <TextView
+        android:id="@+id/tvDateTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:maxLines="1"
+        android:padding="@dimen/dimen_8"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnAddTime"
+        app:layout_constraintEnd_toStartOf="@+id/btnAddTime"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnAddTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/default_time"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvDateTime"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivSync"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/sync"
+        android:elevation="@dimen/dimen_4"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddTime"
+        app:layout_constraintEnd_toEndOf="@+id/btnAddTime"
+        app:layout_constraintStart_toEndOf="@+id/btnAddTime"
+        app:layout_constraintTop_toTopOf="@+id/btnAddTime"
+        app:srcCompat="@drawable/ic_un_uploaded" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

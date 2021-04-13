@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="350dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:layout_marginTop="@dimen/dp_30"
+    android:layout_marginBottom="@dimen/dp_30"
+    android:background="@drawable/customdialogbg1"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_Header"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/custom_dialog_header"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/dp_10"
+        android:paddingEnd="@dimen/dp_10">
+
+        <TextView
+            android:id="@+id/txt_title_project_drawing_comment_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/ivClosecomment"
+            android:padding="@dimen/dimen_8"
+            android:text="@string/action_model_title"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/txt_16"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/ivClosecomment"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:contentDescription="@string/workspace"
+            android:src="@drawable/deleteicon" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_Bottom"
+        android:layout_below="@+id/rl_Header"
+        android:fadingEdge="none"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_10"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <TextView
+        android:id="@+id/tvNoComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/no_comments_found"
+        android:textAllCaps="false"
+        android:textColor="@color/secondary_text_color"
+        android:textSize="@dimen/txt_16"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/rl_Bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp_10">
+
+        <ImageView
+            android:id="@+id/ivAddComment"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_send_black" />
+
+        <EditText
+            android:id="@+id/etcomment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/ivAddComment"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="45dp"
+            android:background="@drawable/edit_text_background"
+            android:hint="@string/addCommentText"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/primary_text_color"
+            android:textColorHint="@color/secondary_text_color" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
+

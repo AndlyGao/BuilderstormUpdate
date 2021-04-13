@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/dimen_16"
+        android:background="@drawable/customdialogbg1"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_Header"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@drawable/custom_dialog_header"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dimen_8"
+                android:layout_toStartOf="@+id/ivClose"
+                android:padding="@dimen/dimen_8"
+                android:text="Date Range"
+                android:textAllCaps="false"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/ivClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/workspace"
+                android:padding="@dimen/dimen_8"
+                android:src="@drawable/deleteicon" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/rlBottom"
+            android:layout_below="@+id/rl_Header"
+            android:layout_margin="@dimen/dimen_8"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/etStartDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/edit_text_background"
+                android:clickable="true"
+                android:drawableStart="@drawable/icon_calendar"
+                android:drawablePadding="@dimen/dimen_8"
+                android:focusable="false"
+                android:focusableInTouchMode="true"
+                android:hint="@string/start_date"
+                android:inputType="datetime"
+                android:longClickable="false"
+                android:maxLines="1"
+                android:padding="10dp"
+                />
+
+            <EditText
+                android:id="@+id/etEndDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/edit_text_background"
+                android:clickable="true"
+                android:drawableStart="@drawable/icon_calendar"
+                android:drawablePadding="@dimen/dimen_8"
+                android:focusable="false"
+                android:focusableInTouchMode="true"
+                android:hint="@string/end_date"
+                android:inputType="datetime"
+                android:longClickable="false"
+                android:maxLines="1"
+                android:padding="10dp" />
+
+            <Button
+                android:id="@+id/btnSave"
+                style="@style/blueButtonStyle"
+                android:layout_width="180dp"
+                android:layout_height="@dimen/dimen_48"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/dimen_16"
+                android:text="@string/apply" />
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>

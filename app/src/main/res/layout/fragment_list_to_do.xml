@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:id="@+id/llTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAddToDo"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_48"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/drawingbg"
+            android:drawableStart="@drawable/ic_plus_white"
+            android:drawablePadding="@dimen/dimen_8"
+            android:paddingStart="@dimen/dp_24"
+            android:paddingEnd="@dimen/dp_24"
+            android:text="@string/add_to_do"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white" />
+
+        <LinearLayout
+            android:id="@+id/llLocks"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_48"
+            android:gravity="center"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/ivOverDue"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_circle_red"
+                android:tint="@color/colorOverDue"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tvOverDue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:maxLines="1"
+                android:padding="@dimen/dp_4" />
+
+            <ImageView
+                android:id="@+id/ivNormal"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="@dimen/dp_1"
+                android:src="@drawable/ic_circle_red"
+                android:tint="@color/colorToDoNormal"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tvNormal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:maxLines="1"
+                android:padding="@dimen/dp_4" />
+
+            <ImageView
+                android:id="@+id/ivWarning"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="@dimen/dp_1"
+                android:src="@drawable/ic_circle_red"
+                android:tint="@color/colorToDoWarning"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tvWarning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:maxLines="1"
+                android:padding="@dimen/dp_4" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvDataSource"
+        style="@style/tvDataSource"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/no_data_found"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llTop" />
+
+    <include
+        android:id="@+id/llSync"
+        layout="@layout/layout_syncing"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDataSource" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSearchFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:padding="@dimen/dimen_8"
+        android:paddingTop="0dp"
+        android:visibility="visible"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llSync"
+        app:spanCount="2"
+        tools:listitem="@layout/item_todo_filter">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:id="@+id/llHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/drawable_header_base_line"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/dimen_4"
+        android:paddingBottom="@dimen/dimen_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvSearchFilter">
+
+        <ImageView
+            android:id="@+id/viewSync"
+            android:layout_width="@dimen/dimen_32"
+            android:layout_height="@dimen/dimen_32"
+            android:contentDescription="@string/syncing_all"
+            android:padding="@dimen/dimen_4"
+            android:src="@drawable/selector_sync" />
+
+        <TextView
+            style="@style/tvHeaderStyle"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/dimen_4"
+            android:layout_weight="0.8"
+            android:gravity="start"
+            android:text="@string/title" />
+
+        <TextView
+            style="@style/tvHeaderStyle"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/date_issued" />
+
+        <TextView
+            style="@style/tvHeaderStyle"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/due_date" />
+
+        <TextView
+            style="@style/tvHeaderStyle"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:text="@string/status" />
+
+    </LinearLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llHeader"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dimen_2"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/row_to_do" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <TextView
+        android:id="@+id/tvNoDataFound"
+        style="@style/styleNoData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llHeader"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <io.github.yavski.fabspeeddial.FabSpeedDial
+        android:id="@+id/fab_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="8dp"
+        app:fabDrawable="@drawable/ic_filter"
+        app:fabGravity="bottom_end"
+        app:fabMenu="@menu/fab_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.3"
+        app:miniFabBackgroundTint="@android:color/white"
+        app:miniFabDrawableTint="@color/colorAccent"
+        app:miniFabTitleTextColor="@color/colorAccent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

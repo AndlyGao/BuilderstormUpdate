@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group>
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_menu"
+            android:title="@string/home" />
+        <item
+            android:id="@+id/nav_password"
+            android:icon="@drawable/ic_lock_menu"
+            android:title="@string/change_password" />
+        <item
+            android:id="@+id/nav_pin"
+            android:icon="@drawable/ic_offline_pin_menu"
+            android:title="@string/change_pin" />
+
+        <item
+            android:id="@+id/nav_setting"
+            android:enabled="false"
+            android:icon="@drawable/ic_settings_menu"
+            android:title="@string/general_settings"
+            android:visible="true" />
+
+        <!--<item-->
+        <!--android:id="@+id/nav_notification"-->
+        <!--android:icon="@drawable/ic_notifications_black"-->
+        <!--android:title="@string/notifications"-->
+        <!--android:visible="true"-->
+        <!--app:actionViewClass="android.widget.TextView" />-->
+        <!--<item-->
+        <!--android:id="@+id/nav_support"-->
+        <!--android:icon="@drawable/ic_support"-->
+        <!--android:title="@string/support"-->
+        <!--android:visible="true"-->
+        <!--app:actionViewClass="androidx.appcompat.widget.AppCompatTextView" />-->
+
+        <item
+            android:id="@+id/nav_notification"
+            android:icon="@drawable/ic_notifications_black"
+            android:title="@string/notifications"
+            android:visible="true"
+            app:actionViewClass="androidx.appcompat.widget.AppCompatTextView" />
+        <!--  <item
+              android:id="@+id/nav_digital_docs"
+              android:icon="@drawable/ic_digital_docs"
+              android:title="@string/recent_document"
+              android:visible="true"
+              app:actionViewClass="androidx.appcompat.widget.AppCompatTextView" />-->
+        <item
+            android:id="@+id/nav_support"
+            android:icon="@drawable/ic_support"
+            android:title="@string/support"
+            android:visible="true"
+            app:actionViewClass="androidx.appcompat.widget.AppCompatTextView" />
+    </group>
+
+    <group>
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_logout_menu"
+            android:title="@string/logout" />
+    </group>
+
+</menu>

@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnAddRfi"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/dp8"
+                android:background="@drawable/drawingbg"
+                android:drawableStart="@drawable/ic_rfi"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/add_rfi"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/txt_16"
+                android:visibility="visible" />
+
+            <RelativeLayout
+                android:id="@+id/rlLocks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="0dp"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingEnd="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_10"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+
+                    <ImageView
+                        android:id="@+id/ivRfiCancel"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_padlock_black"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/tvRFICancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom"
+                        android:padding="@dimen/dp_1" />
+
+                    <ImageView
+                        android:id="@+id/ivTimelyClosed"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="@dimen/dp_1"
+                        android:src="@drawable/ic_padlock_green"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/tvTimelyClosed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom"
+                        android:padding="@dimen/dp_1" />
+
+                    <ImageView
+                        android:id="@+id/ivCloseOver"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="@dimen/dp_1"
+                        android:src="@drawable/ic_padlock_red"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/tvCloseOver"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom"
+                        android:padding="@dimen/dp_1" />
+
+                    <ImageView
+                        android:id="@+id/ivRFIOpen"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="@dimen/dp_1"
+                        android:src="@drawable/ic_padunlock_gold"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/tvRFIOpen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom"
+                        android:padding="@dimen/dp_1" />
+
+                    <ImageView
+                        android:id="@+id/ivRFIClouser"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="@dimen/dp_1"
+                        android:src="@drawable/ic_padunlock_orange"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/tvRFIClouser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom"
+                        android:padding="@dimen/dp_1" />
+
+                    <ImageView
+                        android:id="@+id/ivRFIOpenOver"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="@dimen/dp_1"
+                        android:src="@drawable/ic_padunlock_red"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/tvRFIOpenOver"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom"
+                        android:padding="@dimen/dp_1" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llSync"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#D3D3D3"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_4"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/syncing_all"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2" />
+
+            <ProgressBar
+                style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:indeterminate="true" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvDataSource"
+            style="@style/tvDataSource" />
+
+        <LinearLayout
+            android:id="@+id/ll_Header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drawable_header_base_line"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/dimen_4"
+            android:paddingBottom="@dimen/dimen_4">
+
+            <ImageView
+                android:id="@+id/ivSyncAll"
+                android:layout_width="@dimen/dimen_32"
+                android:layout_height="@dimen/dimen_32"
+                android:padding="@dimen/dimen_4"
+                android:src="@drawable/selector_sync" />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_2"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:padding="2dp"
+                android:text="@string/title"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                android:textColor="@color/primary_text_color"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.4"
+                android:gravity="center"
+                android:maxLines="1"
+                android:padding="2dp"
+                android:singleLine="true"
+                android:text="@string/date_issued"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                android:textColor="@color/primary_text_color"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.4"
+                android:gravity="center"
+                android:maxLines="1"
+                android:padding="2dp"
+                android:singleLine="true"
+                android:text="@string/due_date"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                android:textColor="@color/primary_text_color"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_4"
+                android:layout_weight="0.8"
+                android:maxLines="1"
+                android:padding="2dp"
+                android:text="@string/status"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                android:textColor="@color/primary_text_color"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvNoDataFound"
+                style="@style/styleNoData"
+                android:layout_centerInParent="true" />
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipeRefreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="10"
+                    tools:listitem="@layout/item_rfi" />
+
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</FrameLayout>

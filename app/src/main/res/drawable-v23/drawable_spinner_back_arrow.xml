@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/edit_text_background">
+
+    </item>
+    <item
+        android:width="@dimen/dimen_24"
+        android:height="@dimen/dimen_24"
+        android:drawable="@drawable/ic_down_arrow"
+        android:gravity="center_vertical|end"
+        android:right="@dimen/dimen_16" />
+
+</layer-list>

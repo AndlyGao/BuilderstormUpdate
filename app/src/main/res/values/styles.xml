@@ -1,0 +1,257 @@
+<resources>
+
+    <!-- Base application theme. -->
+
+    <style name="BaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionModeOverlay">true</item>
+        <!--   app branding color for the app bar -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!--   darker variant for the status bar and contextual app bars -->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!--   theme UI controls like checkboxes and text fields -->
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/status_bar</item>
+        <item name="android:textColorPrimary">@color/primary_text_color</item>
+    </style>
+
+    <style name="AppTheme" parent="BaseTheme" />
+    <style name="SplashStyle" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/builder_storm</item>
+    </style>
+
+    <style name="DialogTheme" parent="AppTheme">
+
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--<item name="windowIsFloating">true</item>-->
+        <!--<item name="windowContentOverlay">@null</item>-->
+        <!--<item name="windowAnimationStyle">@style/Animation.Dialog</item>-->
+        <!--<item name="windowSoftInputMode">stateUnspecified|adjustPan</item>-->
+        <!--<item name="windowCloseOnTouchOutside">@bool/config_closeDialogWhenTouchOutside</item>-->
+        <!--<item name="windowActionModeOverlay">true</item>-->
+
+        <!--<item name="colorBackgroundCacheHint">@null</item>-->
+
+        <!--<item name="textAppearance">@style/TextAppearance</item>-->
+        <!--<item name="textAppearanceInverse">@style/TextAppearance.Inverse</item>-->
+
+    </style>
+
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:colorBackground">@color/colorAccent</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="DatePickerTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+
+
+    </style>
+
+    <style name="DefaultChipSuggestionTextView">
+        <item name="chipHorizontalSpacing">6dp</item>
+        <item name="chipBackground">@color/chip_material_background</item>
+        <item name="chipTextSize">14sp</item>
+        <item name="chipHeight">32dp</item>
+        <item name="chipVerticalSpacing">4dp</item>
+    </style>
+
+    <!-- edit Text style -->
+
+    <style name="commonEditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/edit_text_background</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:padding">@dimen/dimen_12</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body2</item>
+        <item name="android:textColor">@color/primary_text_color</item>
+        <item name="android:textColorHint">@color/secondary_text_color</item>
+    </style>
+
+    <style name="commonBigEditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/edit_text_background</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxHeight">@dimen/dimen_140</item>
+        <item name="android:minHeight">@dimen/dimen_80</item>
+        <item name="android:gravity">start</item>
+        <item name="android:padding">@dimen/dimen_12</item>
+        <item name="android:maxLines">10</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body2</item>
+        <item name="android:textColor">@color/primary_text_color</item>
+        <item name="android:textColorHint">@color/secondary_text_color</item>
+    </style>
+
+    <style name="nachoEditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/edit_text_background_auto</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">@dimen/dimen_8</item>
+        <item name="android:paddingEnd">@dimen/dimen_8</item>
+        <item name="android:minHeight">@dimen/dimen_52</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body2</item>
+        <item name="android:textColor">@color/primary_text_color</item>
+        <item name="android:textColorHint">@color/secondary_text_color</item>
+    </style>
+
+
+    <style name="dropDownEditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/edit_text_background</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:clickable">false</item>
+        <item name="android:focusable">false</item>
+        <item name="android:longClickable">false</item>
+        <item name="android:drawablePadding">@dimen/dimen_8</item>
+        <item name="android:drawableEnd">@drawable/ic_arrow_drop</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:padding">@dimen/dimen_12</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body2</item>
+        <item name="android:textColor">@color/primary_text_color</item>
+        <item name="android:textColorHint">@color/secondary_text_color</item>
+    </style>
+
+    <style name="dropDownEditStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/edit_text_background</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:longClickable">false</item>
+        <item name="android:drawablePadding">@dimen/dimen_8</item>
+        <item name="android:drawableEnd">@drawable/ic_arrow_drop</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:padding">@dimen/dimen_12</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body2</item>
+        <item name="android:textColor">@color/primary_text_color</item>
+        <item name="android:textColorHint">@color/secondary_text_color</item>
+    </style>
+
+    <style name="timePicEditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/edit_text_background</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:clickable">false</item>
+        <item name="android:focusable">false</item>
+        <item name="android:longClickable">false</item>
+        <item name="android:drawableEnd">@drawable/ic_time</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:inputType">datetime</item>
+        <item name="android:padding">@dimen/dimen_12</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body2</item>
+        <item name="android:textColor">@color/primary_text_color</item>
+        <item name="android:textColorHint">@color/secondary_text_color</item>
+    </style>
+
+
+    <!-- TextView Style-->
+
+    <style name="tvHeaderStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Body1</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:paddingTop">@dimen/dimen_4</item>
+        <item name="android:paddingBottom">@dimen/dimen_4</item>
+        <item name="android:paddingEnd">@dimen/dimen_1</item>
+        <item name="android:paddingStart">@dimen/dimen_1</item>
+    </style>
+
+
+    <style name="tvDataSource">
+        <item name="android:text">@string/poor_connections_message</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/selector_data_source</item>
+        <item name="android:gravity">center</item>
+        <item name="android:state_selected">true</item>
+        <item name="android:padding">@dimen/dimen_2</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="styleNoData">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/dimen_16</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Subhead</item>
+        <item name="android:textColor">@color/secondary_text_color</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <!-- text Appearances -->
+
+    <style name="textAppH6" parent="TextAppearance.AppCompat.Body2" />
+
+    <style name="textAppH5" parent="TextAppearance.AppCompat.Body1" />
+
+    <style name="textAppH4" parent="TextAppearance.AppCompat.Subhead" />
+
+    <style name="textAppH3" parent="TextAppearance.AppCompat.Title" />
+
+    <style name="textAppH2" parent="TextAppearance.AppCompat.Headline" />
+
+    <style name="textAppH1" parent="TextAppearance.AppCompat.Display1" />
+
+    <style name="textAppDefault" parent="TextAppearance.AppCompat.Body1" />
+
+
+    <!-- Buttons -->
+    <style name="blueButtonStyle" parent="TextAppearance.AppCompat.Widget.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/dimen_40</item>
+        <item name="android:background">@drawable/drawingbg</item>
+        <item name="android:paddingStart">@dimen/dimen_32</item>
+        <item name="android:paddingEnd">@dimen/dimen_32</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="EditText">
+        <item name="android:singleLine">true</item>
+        <item name="colorControlNormal">#FFFFFF</item>
+        <item name="colorControlActivated">#FFFFFF</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="BrandedSwitch" parent="AppTheme">
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:textColorPrimary">@color/primary_text_color</item>
+        <item name="android:textColorSecondary">@color/secondary_text_color</item>
+        <item name="android:background">@android:color/white</item>
+    </style>
+
+    <style name="MyCardView" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MaterialCardView.Cut
+        </item>
+    </style>
+
+
+    <style name="ShapeAppearanceOverlay.MaterialCardView.Cut" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">4dp</item>
+        <item name="cornerSizeTopLeft">4dp</item>
+        <item name="cornerSizeBottomRight">4dp</item>
+        <item name="cornerSizeBottomLeft">4dp</item>
+        <item name="cardCornerRadius">4dp</item>
+    </style>
+
+</resources>

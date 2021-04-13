@@ -1,0 +1,34 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:wheel="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dlgProgress"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@android:color/transparent">
+
+    <com.builderstrom.user.views.customViews.ProgressWheel
+        android:id="@+id/progress_wheel"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        wheel:matProg_barColor="@color/colorPrimary"
+        wheel:matProg_fillRadius="true"
+        wheel:matProg_progressIndeterminate="false">
+
+    </com.builderstrom.user.views.customViews.ProgressWheel>
+
+    <TextView
+        android:id="@+id/tvProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/progress_wheel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="loading..."
+        android:textColor="@color/colorAccent"
+        android:textSize="15sp" />
+
+
+</RelativeLayout>

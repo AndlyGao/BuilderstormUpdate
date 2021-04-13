@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dimen_4">
+
+    <ImageView
+        android:id="@+id/ivVideo"
+        android:layout_width="@dimen/dimen_160"
+        android:layout_height="@dimen/dimen_120"
+        android:layout_gravity="center" />
+
+    <View
+        android:id="@+id/viewDark"
+        android:layout_width="@dimen/dimen_160"
+        android:layout_height="@dimen/dimen_120"
+        android:layout_gravity="center"
+        android:background="#33000000" />
+
+    <ImageView
+        android:id="@+id/ivPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="@dimen/dimen_16"
+        android:src="@drawable/ic_play_button" />
+</FrameLayout>

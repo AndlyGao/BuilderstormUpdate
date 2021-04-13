@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/splash_icon" />
+
+        <com.builderstrom.user.views.customViews.ShinnyTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="19dp"
+            android:singleLine="true"
+            android:text="@string/workspace_url"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/txt_18"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnSubmit"
+            style="@style/blueButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_48"
+            android:layout_below="@+id/rlWorkspace"
+            android:layout_marginStart="@dimen/dimen_16"
+            android:layout_marginTop="@dimen/dimen_36"
+            android:layout_marginEnd="@dimen/dimen_16"
+            android:text="@string/submit" />
+
+
+        <RelativeLayout
+            android:id="@+id/rlWorkspace"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dimen_48">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <AutoCompleteTextView
+                    android:id="@+id/etWorkspace"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@android:color/transparent"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="end"
+                    android:hint="@string/workspace"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textAlignment="textEnd"
+                    android:textAllCaps="false"
+                    android:textColor="@color/primary_text_color"
+                    android:textColorHint="@color/secondary_text_color"
+                    android:textSize="@dimen/txt_20" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text=".builderstorm.com"
+                    android:textColor="@color/secondary_text_color"
+                    android:textSize="@dimen/txt_20" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvTermsCondition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/dimen_16"
+            android:gravity="center_horizontal"
+            android:text="@string/terms_policy"
+            android:textAlignment="center"
+            android:visibility="gone"
+            android:textColor="@color/primary_text_color"
+            android:textColorLink="@color/blue" />
+
+    </RelativeLayout>
+</LinearLayout>

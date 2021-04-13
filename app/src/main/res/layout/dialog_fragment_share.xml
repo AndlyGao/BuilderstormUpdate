@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/dimen_16"
+        android:background="@drawable/customdialogbg1"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_Header"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@drawable/custom_dialog_header"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dimen_8"
+                android:layout_toStartOf="@+id/ivClose"
+                android:padding="@dimen/dimen_8"
+                android:text="@string/share_rfi"
+                android:textAllCaps="false"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/primary_text_color"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/ivClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/workspace"
+                android:padding="@dimen/dimen_16"
+                android:src="@drawable/deleteicon" />
+        </RelativeLayout>
+
+
+        <com.builderstrom.user.views.customViews.textChips.NachoTextView
+            android:id="@+id/tvAutoUsersRFI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_8"
+            android:background="@drawable/edit_text_background_auto"
+            android:hint="@string/select_to_users"
+            android:minHeight="@dimen/dimen_52"
+            android:paddingStart="@dimen/dimen_8"
+            android:paddingEnd="@dimen/dimen_8"
+            app:chipBackground="@color/colorChipBack"
+            app:chipHeight="@dimen/dp_24"
+            app:chipHorizontalSpacing="@dimen/dimen_4"
+            app:chipTextColor="@android:color/black"
+            app:chipTextSize="14sp"
+            app:chipVerticalSpacing="3dp" />
+
+
+        <com.builderstrom.user.views.customViews.textChips.NachoTextView
+            android:id="@+id/tvAutoCCUsersRFI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_8"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:background="@drawable/edit_text_background_auto"
+            android:hint="@string/select_cc_users"
+            android:minHeight="@dimen/dimen_52"
+            android:paddingStart="@dimen/dimen_8"
+            android:paddingEnd="@dimen/dimen_8"
+            app:chipBackground="@color/colorChipBack"
+            app:chipHeight="@dimen/dp_24"
+            app:chipHorizontalSpacing="@dimen/dimen_4"
+            app:chipTextColor="@android:color/black"
+            app:chipTextSize="14sp"
+            app:chipVerticalSpacing="3dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnShareRfi"
+            style="@style/blueButtonStyle"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/dimen_8"
+            android:drawableStart="@drawable/ic_share_option"
+            android:drawablePadding="@dimen/dimen_16"
+            android:text="Share RFI"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white" />
+
+
+        <LinearLayout
+            android:id="@+id/llSharedUsers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_8">
+
+            <TextView
+                android:id="@+id/tvToUsersModified"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Users Notified: "
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                android:textColor="@color/primary_text_color" />
+
+            <LinearLayout
+                android:id="@+id/llMoreUsers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_2"
+                android:layout_marginEnd="@dimen/dp_2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvToUsers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/dp_2"
+                    android:paddingEnd="@dimen/dp_2"
+                    android:paddingBottom="@dimen/dp_2"
+                    android:text="To Users: "
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/primary_text_color" />
+
+                <TextView
+                    android:id="@+id/tvCcUsers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp_2"
+                    android:text="Cc Users:"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/primary_text_color" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

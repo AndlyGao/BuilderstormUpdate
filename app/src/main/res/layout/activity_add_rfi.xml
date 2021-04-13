@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/llMain"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:padding="@dimen/dp_22">
+
+            <com.builderstrom.user.views.customViews.textChips.NachoTextView
+                android:id="@+id/tvAutoUsersRFI"
+                style="@style/nachoEditTextStyle"
+                android:hint="@string/select_to_users"
+                app:chipBackground="@color/colorChipBack"
+                app:chipHeight="@dimen/dp_24"
+                app:chipHorizontalSpacing="@dimen/dimen_4"
+                app:chipTextColor="@android:color/black"
+                app:chipTextSize="14sp"
+                app:chipVerticalSpacing="3dp" />
+
+
+            <com.builderstrom.user.views.customViews.textChips.NachoTextView
+                android:id="@+id/tvAutoCCUsersRFI"
+                style="@style/nachoEditTextStyle"
+                android:layout_marginTop="@dimen/dimen_8"
+                android:hint="@string/select_cc_users"
+                app:chipBackground="@color/colorChipBack"
+                app:chipHeight="@dimen/dp_24"
+                app:chipHorizontalSpacing="@dimen/dimen_4"
+                app:chipTextColor="@android:color/black"
+                app:chipTextSize="14sp"
+                app:chipVerticalSpacing="3dp" />
+
+            <EditText
+                android:id="@+id/etTitleRFI"
+                style="@style/commonEditTextStyle"
+                android:layout_marginTop="@dimen/dp_10"
+                android:hint="@string/title"
+                android:inputType="text"
+                android:nextFocusDown="@+id/etDescriptionRFI"
+                tools:ignore="Autofill" />
+
+            <EditText
+                android:id="@+id/etDescriptionRFI"
+                style="@style/commonBigEditTextStyle"
+                android:layout_marginTop="@dimen/dp_10"
+                android:hint="@string/description"
+                android:inputType="textMultiLine"
+                tools:ignore="Autofill" />
+
+
+            <EditText
+                android:id="@+id/etDateRFI"
+                style="@style/dropDownEditTextStyle"
+                android:layout_marginTop="@dimen/dp_10"
+                android:drawableEnd="@drawable/ic_calendar"
+                android:hint="@string/due_date"
+                android:inputType="datetime"
+                tools:ignore="Autofill" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMetaData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_8"
+                android:nestedScrollingEnabled="false"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="2"
+                tools:listitem="@layout/row_meta_text_view" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnUploadRfi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/uploadbg"
+                android:drawableStart="@drawable/ic_file_upload"
+                android:gravity="center"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:text="@string/upload"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAddRfi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_8"
+                android:nestedScrollingEnabled="false"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_file_upload" />
+
+
+            <Button
+                android:id="@+id/btnSaveRFI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/dimen_16"
+                android:background="@drawable/drawingbg"
+                android:paddingStart="@dimen/dimen_80"
+                android:paddingEnd="@dimen/dimen_80"
+                android:text="@string/submit"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white" />
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    >
+</LinearLayout>
+
+
+
+

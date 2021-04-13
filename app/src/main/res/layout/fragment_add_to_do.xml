@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:clickable="true"
+    android:focusable="true">
+
+    <include
+        android:id="@+id/includeToolbar"
+        layout="@layout/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/includeToolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_4">
+
+            <com.builderstrom.user.views.customViews.textChips.NachoTextView
+                android:id="@+id/tvToUsers"
+                style="@style/nachoEditTextStyle"
+                android:layout_margin="@dimen/dimen_4"
+                android:hint="@string/select_to_users"
+                app:chipBackground="@color/colorChipBack"
+                app:chipHeight="@dimen/dp_24"
+                app:chipHorizontalSpacing="@dimen/dimen_4"
+                app:chipTextColor="@android:color/black"
+                app:chipTextSize="14sp"
+                app:chipVerticalSpacing="3dp" />
+
+            <com.builderstrom.user.views.customViews.textChips.NachoTextView
+                android:id="@+id/tvCcUsers"
+                style="@style/nachoEditTextStyle"
+                android:layout_margin="@dimen/dimen_4"
+                android:hint="@string/select_cc_users"
+                android:maxLines="10"
+                app:chipBackground="@color/colorChipBack"
+                app:chipHeight="@dimen/dp_24"
+                app:chipHorizontalSpacing="@dimen/dimen_4"
+                app:chipTextColor="@android:color/black"
+                app:chipTextSize="14sp"
+                app:chipVerticalSpacing="3dp" />
+
+            <EditText
+                android:id="@+id/etDueDate"
+                style="@style/dropDownEditTextStyle"
+                android:layout_margin="@dimen/dimen_4"
+                android:drawableEnd="@drawable/ic_calendar"
+                android:hint="@string/due_date"
+                android:inputType="date"
+                tools:ignore="Autofill" />
+
+            <EditText
+                android:id="@+id/etTitle"
+                style="@style/commonEditTextStyle"
+                android:layout_margin="@dimen/dimen_4"
+                android:hint="@string/title"
+                android:inputType="textPersonName"
+                tools:ignore="Autofill" />
+
+            <EditText
+                android:id="@+id/etDescription"
+                style="@style/commonBigEditTextStyle"
+                android:layout_margin="@dimen/dimen_4"
+                android:hint="@string/description"
+                android:inputType="textMultiLine"
+                tools:ignore="Autofill" />
+
+            <EditText
+                android:id="@+id/etCategory"
+                style="@style/dropDownEditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_4"
+                android:hint="@string/category"
+                android:inputType="textPersonName"
+                tools:ignore="Autofill" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAttachments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_4"
+                android:layout_marginStart="@dimen/dimen_4"
+                android:orientation="vertical"
+                android:padding="@dimen/dimen_4"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/row_attachment" />
+
+            <Button
+                android:id="@+id/btnUpload"
+                style="@style/blueButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/dimen_8"
+                android:background="@drawable/uploadbg"
+                android:text="@string/upload_from_device" />
+
+            <Button
+                android:id="@+id/btnSave"
+                style="@style/blueButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/dimen_8"
+                android:text="@string/save" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

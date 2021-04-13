@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:id="@+id/llTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/dimen_8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAddSnagList"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_48"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/drawingbg"
+            android:drawableStart="@drawable/ic_snag"
+            android:drawablePadding="@dimen/dimen_8"
+            android:paddingStart="@dimen/dp_24"
+            android:paddingEnd="@dimen/dp_24"
+            android:text="@string/add_snag_list"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white" />
+
+        <LinearLayout
+            android:id="@+id/llLocks"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_48"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/ivLockCancel"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_padlock_black"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tvLockCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:maxLines="1"
+                android:padding="@dimen/dp_1" />
+
+            <ImageView
+                android:id="@+id/ivTimelyClosed"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="@dimen/dp_1"
+                android:src="@drawable/ic_padlock_green"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tvTimelyClosed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:maxLines="1"
+                android:padding="@dimen/dp_1" />
+
+            <ImageView
+                android:id="@+id/ivCloseOver"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="@dimen/dp_1"
+                android:src="@drawable/ic_padlock_red"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tvCloseOver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:maxLines="1"
+                android:padding="@dimen/dp_1" />
+
+            <ImageView
+                android:id="@+id/ivLockOpen"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="@dimen/dp_1"
+                android:src="@drawable/ic_padunlock_gold"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tvLockOpen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:maxLines="1"
+                android:padding="@dimen/dp_1" />
+
+            <ImageView
+                android:id="@+id/ivLockClouser"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="@dimen/dp_1"
+                android:src="@drawable/ic_padunlock_orange"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tvLockClouser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:maxLines="1"
+                android:padding="@dimen/dp_1" />
+
+            <ImageView
+                android:id="@+id/ivOpenOver"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="@dimen/dp_1"
+                android:src="@drawable/ic_padunlock_red"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tvOpenOver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:maxLines="1"
+                android:padding="@dimen/dp_1" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llSync"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#D3D3D3"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_4"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/llTop">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/syncing_all"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2" />
+
+        <ProgressBar
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tvDataSource"
+        style="@style/tvDataSource"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llSync" />
+
+    <LinearLayout
+        android:id="@+id/llHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/drawable_header_base_line"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/dimen_4"
+        android:paddingBottom="@dimen/dimen_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDataSource">
+
+        <ImageView
+            android:src="@drawable/selector_sync"
+            android:id="@+id/viewSync"
+            android:padding="@dimen/dimen_4"
+            android:layout_width="@dimen/dimen_32"
+            android:layout_height="@dimen/dimen_32" />
+
+        <TextView
+            style="@style/tvHeaderStyle"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/dimen_4"
+            android:layout_weight="0.8"
+            android:gravity="start"
+            android:text="@string/title" />
+
+        <TextView
+            style="@style/tvHeaderStyle"
+            android:layout_width="0dp"
+            android:layout_weight="1.2"
+            android:text="@string/date_issued" />
+
+        <TextView
+            style="@style/tvHeaderStyle"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:text="@string/status" />
+
+        <TextView
+            style="@style/tvHeaderStyle"
+            android:layout_width="0dp"
+            android:layout_weight="1.2"
+            android:text="@string/mark_as" />
+
+    </LinearLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llHeader">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dimen_2"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <TextView
+        style="@style/styleNoData"
+        android:id="@+id/tvNoDataFound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llHeader"
+        app:layout_constraintVertical_bias="0.3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

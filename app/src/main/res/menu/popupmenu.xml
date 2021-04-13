@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--<item-->
+    <!--android:id="@+id/item_share_gallery"-->
+    <!--android:title="Share Gallery" />-->
+    <item
+        android:id="@+id/item_upload_more"
+        android:title="Upload More" />
+
+    <item
+        android:id="@+id/item_delete_gallery"
+        android:title="Delete Gallery" />
+</menu>

@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--<item
+        android:id="@+id/action_todo"
+        android:icon="@drawable/ic_search"
+        android:title="Search To Do" />-->
+    <item
+        android:id="@+id/action_date"
+        android:icon="@drawable/ic_fab_calendar"
+        android:title="Date Range" />
+    <item
+        android:id="@+id/action_user"
+        android:icon="@drawable/ic_person"
+        android:title="User Responsible" />
+    <item
+        android:id="@+id/action_category"
+        android:icon="@drawable/ic_todo"
+        android:title="Categories" />
+    <item
+        android:id="@+id/action_status"
+        android:icon="@drawable/ic_status"
+        android:title="Status" />
+
+</menu>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "340064750661",
+    "firebase_url": "https://coral-arbor-92519.firebaseio.com",
+    "project_id": "coral-arbor-92519",
+    "storage_bucket": "coral-arbor-92519.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:340064750661:android:fc666cf035e30d51",
+        "android_client_info": {
+          "package_name": "com.builderstrom.user"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "340064750661-muv0kkprk7tj7ahmolqopqinlfoais0h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.builderstrom.user",
+            "certificate_hash": "3a71ef0a778f375faf52bf914e8c9c63db22aab9"
+          }
+        },
+        {
+          "client_id": "340064750661-5k2d85a29cagk1t5v1ajfq5tifvck7uj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBS4HGW0ItmXLIQI2OntU8P419j_or9y-M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "340064750661-5k2d85a29cagk1t5v1ajfq5tifvck7uj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

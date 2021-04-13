@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-path
+        name="builderstorm_images"
+        path="Android/data/com.builderstrom.user/files/Pictures" />
+    <external-path
+        name="storage/emulated/0"
+        path="." />
+</paths>

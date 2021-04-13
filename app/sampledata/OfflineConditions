@@ -1,0 +1,305 @@
+
+     //////////     Snag List offline locks conditions   ////////
+
+    ==>   Locks Colors (depends upon "show_status" value)-:
+            0-->open-->Yellow
+            1-->For Closure-->Orange
+            2-->Timely Closed-->green
+            3-->Cancelled-->black
+            4-->Open Overdue-->red unlocked
+            5-->Closed Overdue-->red locked
+
+    ==>  conditions based on "snag status"
+       if(snag_status == "2"){
+           if(due_date >= modified_date){
+              show_status = 2;
+           }else{
+               show_status = 5;
+           }
+       }else{
+           if(snag_status == "0" || snag_status == "4"){
+               if(due_date >= current){
+                 show_status = 0;
+               } else {
+                 show_status = 4;
+               }
+           }
+           if(snag_status == "1"){
+               show_status = 1;
+           }
+           if(snag_status == "3"){
+               show_status = 3;
+           }
+       }
+
+       Mark_as status conditions:-
+       Mark[a, b]
+        if(a=0){
+            Open to close(1)    (markPosition=0)
+        }else if(a==1) {
+            for_clouser(2)      (markPosition=2)
+        }else{
+              Button invisible
+        }
+
+        if(b){
+            close to reopen(Button visible)(0)   (markPosition=1)
+        }
+
+        ////////////    RFI Locks Conditions     ////////////
+
+    ==>   Locks Colors (depends upon "show_status" value)-:
+            0-->open-->Yellow
+            1-->For Closure-->Orange
+            2-->Timely Closed-->green
+            3-->Cancelled-->black
+            4-->Open Overdue-->red unlocked
+            5-->Closed Overdue-->red locked
+
+    ==>  conditions based on "status" as ri status and isAnswered( 0 || 1)
+             if (status == 3) {
+                        show_status = 3;
+                    } else if (status != 2) {
+                        if (isAnswered == 1) {
+                            if (currentDate < dueDate)){
+                                if (status == 0) {
+                                    show_status = 2;
+                                } else {
+                                    show_status = 3;
+                                }
+                            } else{
+                                if (status == 0) {
+                                    show_status = 2;
+                                } else {
+                                    show_status = 5;
+                                }
+                            }
+                        } else {
+                            if (currentDate < dueDate)){
+                                show_status = 0;
+                            } else{
+                                show_status = 4;
+                            }
+                        }
+                    }
+             }
+
+
+        /------ Added parameters  to project sign in api ------/
+
+        overtime----[{"endTime":"06:53","startTime":"12:53"}]
+        standard_break_paid----"0,1,2"
+        standard_break---- [{"endTime":"23:30","startTime":"21:25"},{"endTime":"08:00","startTime":"01:05"}]
+
+
+
+
+     /-------- Project Sign In/Out logic in offline case-------/
+
+     1. Every time there will be a new entry whenever user signs in or out.
+     2. Only user's date and user time changes in every entry.
+     3. Only last entry will remain saved if its status is 0(user signed in) rest entries will be
+     deleted after syncing.
+
+
+    /------------- Timesheet menu condition---------------/
+     if (is_processed == false){
+        if (restrictedpermisison == false){
+            View -> Display "Drop down" of 'Projects'
+
+            if ((Project selected){
+                if (is_absent== empty)){
+                    View -> Display "Worktime" , "Travel" and "Breaks".
+                }
+
+            } else {
+                View -> Display "Sick" , "Holiday" and "Notes".
+
+                if ( allow_expenses_paid == true ){
+                    View -> Display "Expenses"
+                }
+
+                if ( allow_pricework_paid == true ){
+                    View -> Display "Price-work"
+                }
+
+                if (metaList > 0) {
+                    View -> Display "Other"
+                }
+            }
+        }
+
+
+     } else {
+        showMessage -> "Your time sheet for this period had been processed. You cannot modify the existing times."
+
+     }
+
+     /------------- Timesheet menu condition by Sheetal---------------/
+          if (is_processed == false){
+            if (restrictedpermisison == false){
+                View -> Display "Drop down" of 'Projects'
+
+                if ((Project selected){
+                    if (is_absent== empty)){
+                        View -> Display "Worktime" , "Travel" and "Breaks".
+     					    if ( allow_expenses_paid == true ){
+     					    View -> Display "Expenses"
+     					}
+
+     					if ( allow_pricework_paid == true ){
+     						View -> Display "Price-work"
+     					}
+                     }
+     				if (metaList > 0) {
+                         View -> Display "Other"
+                     }
+
+                 } else {
+                     View -> Display "Sick" , "Holiday" and "Notes".
+     			}
+
+             }
+
+          } else {
+             showMessage -> "Your time sheet for this period had been processed. You cannot modify the existing times."
+
+          }
+
+
+
+          ////// Timesheet standard breaks conditions ////
+
+               if(allow_standard_break==1 && (standard_Breaks_array).isNotEmpty){
+                    views standard breaks
+                 }else{
+                    break_require_time =1 ?(start /end ) :( break in minutes)
+                 }
+
+//    data_type Standard breaks = 6(deletable not editable)
+//    data_type holiday/sick = 0 (deletable not editable)
+//    data_type break/travel/worktime/= 0 (deletable , editable)
+
+
+data_type = 0(0-Worktime,1-Travel,2-Breaks,3-Expenses,4-Pricework,5-Metadata,6-Standard Breaks)
+
+
+Added on 10/07/2020
+//      TimeSheet button colors
+0       case Expense:
+        case Break:
+        case Default:
+            color-> RED
+1       case Weekend Date:
+            color-> Green
+2       case Holiday
+            color-Purple
+3       case Sick:
+            color->Yellow
+4       case PriceWork:
+        case Travel:
+        case WorkTime:
+            color->Blue
+
+ /**********   video urls type handler in digital doc video section    *******/
+
+    http://www.youtube.com/watch?v=0zM4nApSvMg&feature=feedrec_grec_index
+    http://www.youtube.com/user/SomeUser#p/a/u/1/QDK8U-VIH_o
+    http://www.youtube.com/v/0zM4nApSvMg?fs=1&amp;hl=en_US&amp;rel=0
+    http://www.youtube.com/watch?v=0zM4nApSvMg#t=0m10s
+    http://www.youtube.com/embed/0zM4nApSvMg?rel=0
+    http://www.youtube.com/watch?v=0zM4nApSvMg
+    http://youtu.be/0zM4nApSvMg
+    https://www.youtube.com/watch?v=nBuae6ilH24
+    https://www.youtube.com/watch?v=pJegNopBLL8
+    http://www.youtube.com/watch?v=0zM4nApSvMg#t=0m10s
+    https://www.youtube.com/watch?v=0zM4nApSvMg&feature=youtu.be
+    https://www.youtube.com/watch?v=_5BTo2oZ0SE
+    https://m.youtube.com/watch?feature=youtu.be&v=_5BTo2oZ0SE
+    https://m.youtube.com/watch?v=_5BTo2oZ0SE
+    https://www.youtube.com/watch?feature=youtu.be&v=_5BTo2oZ0SE&app=desktop
+    https://www.youtube.com/watch?v=nBuae6ilH24
+    https://www.youtube.com/watch?v=eLlxrBmD3H4
+
+
+    handler regex-
+    http(?:s)?:\/\/(?:m.)?(?:www\.)?youtu(?:\.be\/|be\.com\/(?:watch\?(?:feature=youtu.be\&)?v=|v\/|embed\/|user\/(?:[\w#]+\/)+))([^&#?\n]+)
+
+
+
+
+ <<<========    Daily diary site labour section ===========>>
+
+
+      changes in add diary ==>
+
+                 for (DiaryLabourModel model : labourDataList) {
+                     if (model.getNoSite() != null) {
+                        if (isStartFinish) {
+                           if (model.getStartTime() != null && !model.getStartTime().isEmpty()
+                             && model.getFinishTime() != null && !model.getFinishTime().isEmpty()) {
+                              filterLabourList.add(model);
+                           }
+                        } else {
+                              filterLabourList.add(model);
+                        }
+                     }
+                 }
+
+          case:=
+           ** during filteration, if start./end view is selected then startend time are compulsory but
+                     in hours view these are not compulsory
+
+
+
+
+   changes in add labour adapter ==>
+              if (isStartFinish) {
+                    if (dModel.getStartTime() != null && !dModel.getStartTime().isEmpty()
+                            && dModel.getFinishTime() != null && !dModel.getFinishTime().isEmpty()
+                    ) {
+                        long td2 = CommonMethods.timeDifferenceMins(dModel.getStartTime(), dModel.getFinishTime());
+                        dModel.setTotalHours(String.valueOf(td2));
+                        int siteNo = Integer.parseInt(dModel.getNoSite());
+                        et.setText(CommonMethods.convertMinToHours(siteNo * td2));
+                    } else {
+                        et.setText(null);
+                    }
+                } else {
+                    String[] time = ((AddDiary) context).getTimeArr();
+                    if (time != null && !((BaseActivity) context).isInternetAvailable()) {
+                        long td2 = CommonMethods.timeDifferenceMins(time[0], time[1]);
+                        dModel.setTotalHours(String.valueOf(td2));
+                        int siteNo = Integer.parseInt(dModel.getNoSite());
+                        et.setText(CommonMethods.convertMinToHours(siteNo * td2));
+                    } else {
+                        et.setText(null);
+                    }
+                }
+
+ Cases:
+ ** no of site must not be empty(only forced condition)
+ ** In start/End time view , user itself enter the start and end time and then automatically
+    total hours will be calculated if user did not enter the start and end time then on saving
+    it is calculated automatically by server end where the put default values entered by admin.
+ ** In offline case , in start/end view is not there (i.e only hours view ) then after entering
+    the site number the start/end time will be retrieved from general setting according to that day
+    and total hours will be calculated.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

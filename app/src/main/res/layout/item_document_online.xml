@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_Container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/dp5"
+    android:background="#eeeeee"
+    android:gravity="center_vertical"
+    android:padding="@dimen/dp_10">
+
+    <ImageView
+        android:id="@+id/ivSync"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:padding="@dimen/dp_4"
+        android:src="@drawable/ic_refresh"
+        tools:ignore="ContentDescription" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivPDF"
+            android:layout_width="@dimen/dp_32"
+            android:layout_height="@dimen/dp_32"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/pdf" />
+
+        <ImageView
+            android:id="@+id/iv_pdfDownlaod"
+            android:layout_width="@dimen/dp_22"
+            android:layout_height="@dimen/dp_22"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_check_ok"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/ivPreview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_4"
+        android:src="@drawable/ic_search" />
+
+    <TextView
+        android:id="@+id/tvDocumentTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="@dimen/dp_4"
+        android:singleLine="true"
+        android:text="Document"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+        android:textColor="@color/primary_text_color"
+        android:textSize="@dimen/txt_16" />
+
+    <ImageView
+        android:id="@+id/ivEditDigitalDoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_4"
+        android:visibility="gone"
+        android:src="@drawable/ic_edit_black" />
+
+    <ImageView
+        android:id="@+id/ivEditDoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_4"
+        android:visibility="gone"
+        android:src="@drawable/ic_edit" />
+
+    <ImageView
+        android:id="@+id/ivMoreInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_4"
+        android:src="@drawable/ic_info" />
+
+    <ImageView
+        android:id="@+id/ivDot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_4"
+        android:visibility="gone"
+        android:src="@drawable/ic_more" />
+
+</LinearLayout>
+
+
+

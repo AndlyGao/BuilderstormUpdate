@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/dimen_16">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/customdialogbg1"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_Header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_8"
+            android:background="@drawable/custom_dialog_header"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/dimen_8">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:padding="@dimen/dimen_8"
+                android:textAllCaps="false"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDayDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvTitle"
+                android:layout_centerHorizontal="true"
+                android:minWidth="@dimen/dimen_80"
+                android:padding="@dimen/dimen_8"
+                android:textAllCaps="false"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2" />
+
+            <ImageView
+                android:id="@+id/ivBackward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/ivForward"
+                android:layout_alignBottom="@+id/tvDayDate"
+                android:layout_toStartOf="@+id/tvDayDate"
+                android:padding="@dimen/dimen_4"
+                android:src="@drawable/ic_prev_week"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/ivForward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/tvDayDate"
+                android:layout_alignBottom="@+id/tvDayDate"
+                android:layout_toEndOf="@+id/tvDayDate"
+                android:padding="@dimen/dimen_4"
+                app:srcCompat="@drawable/ic_next_week"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/ivClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:contentDescription="@string/workspace"
+                android:padding="@dimen/dimen_8"
+                android:src="@drawable/deleteicon" />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvProjects"
+            style="@style/dropDownEditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_16"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:layout_marginEnd="@dimen/dimen_16"
+            android:layout_marginBottom="@dimen/dimen_8"
+            android:background="@drawable/edittextborder"
+            android:drawableEnd="@drawable/ic_arrow_drop"
+            android:hint="@string/select_project"
+            android:padding="8dp" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvGrid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dp5"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="3" />
+
+                <EditText
+                    android:id="@+id/etProjectTitle"
+                    style="@style/commonEditTextStyle"
+                    android:layout_marginLeft="@dimen/dimen_12"
+                    android:layout_marginTop="@dimen/dimen_4"
+                    android:layout_marginRight="@dimen/dimen_12"
+                    android:hint="Project Title "
+                    android:inputType="datetime"
+                    android:orientation="vertical"
+                    android:visibility="gone" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!-- Overview -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvOverView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dimen_8"
+                        android:visibility="gone"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                    <!-- Work time-->
+                    <LinearLayout
+                        android:id="@+id/llOverTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dimen_8"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/etWorkStartTime"
+                            style="@style/timePicEditTextStyle"
+                            android:layout_margin="@dimen/dimen_4"
+                            android:hint="@string/start_time"
+                            android:inputType="datetime" />
+
+                        <EditText
+                            android:id="@+id/etWorkEndTime"
+                            style="@style/timePicEditTextStyle"
+                            android:layout_margin="@dimen/dimen_4"
+                            android:hint="@string/end_time"
+                            android:inputType="datetime" />
+
+                        <EditText
+                            android:id="@+id/etWorkHours"
+                            style="@style/commonEditTextStyle"
+                            android:layout_margin="@dimen/dimen_4"
+                            android:hint="Total Hours: "
+                            android:inputType="number"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/tvWorkTask"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dimen_4"
+                            android:background="@drawable/edittextborder"
+                            android:drawableEnd="@drawable/ic_arrow_drop"
+                            android:hint="@string/select_task"
+                            android:padding="8dp" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnOvertimeSave"
+                            style="@style/blueButtonStyle"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_margin="@dimen/dimen_8"
+                            android:text="@string/save" />
+
+                    </LinearLayout>
+
+                    <!-- Travel -->
+                    <LinearLayout
+                        android:id="@+id/llTravel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dimen_8"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/etTravelStartTime"
+                            style="@style/timePicEditTextStyle"
+                            android:layout_margin="@dimen/dimen_4"
+                            android:hint="@string/start_time"
+                            android:inputType="datetime" />
+
+                        <EditText
+                            android:id="@+id/etTravelFrom"
+                            style="@style/dropDownEditTextStyle"
+                            android:layout_margin="@dimen/dimen_4"
+                            android:hint="@string/from"
+                            android:inputType="text" />
+
+                        <EditText
+                            android:id="@+id/etTravelEndTime"
+                            style="@style/timePicEditTextStyle"
+                            android:layout_margin="@dimen/dimen_4"
+                            android:hint="@string/end_time"
+                            android:inputType="datetime" />
+
+                        <EditText
+                            android:id="@+id/etTravelTo"
+                            style="@style/dropDownEditTextStyle"
+                            android:layout_margin="@dimen/dimen_4"
+                            android:hint="@string/to"
+                            android:inputType="text" />
+
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnTravelSave"
+                            style="@style/blueButtonStyle"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_margin="@dimen/dimen_8"
+                            android:text="@string/save" />
+
+                    </LinearLayout>
+
+                    <!-- Breaks -->
+                    <LinearLayout
+                        android:id="@+id/llBreaks"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dimen_8"
+                        android:visibility="gone">
+
+
+                        <LinearLayout
+                            android:id="@+id/llBreaksSplit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/etBreakStartTime"
+                                style="@style/timePicEditTextStyle"
+                                android:layout_margin="@dimen/dimen_4"
+                                android:hint="@string/start_time"
+                                android:inputType="datetime" />
+
+                            <EditText
+                                android:id="@+id/etBreakEndTime"
+                                style="@style/timePicEditTextStyle"
+                                android:layout_margin="@dimen/dimen_4"
+                                android:hint="@string/end_time"
+                                android:inputType="datetime" />
+
+                            <EditText
+                                android:id="@+id/etBreakTime"
+                                style="@style/commonEditTextStyle"
+                                android:layout_margin="@dimen/dimen_4"
+                                android:hint="Break Time: (In minutes)"
+                                android:inputType="datetime" />
+                        </LinearLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/rlStandardBreaks"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="@dimen/dimen_4"
+                                android:paddingBottom="@dimen/dimen_4"
+                                android:text="Standard Breaks" />
+
+                            <ImageView
+                                android:id="@+id/ivAddBreak"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:padding="@dimen/dimen_4"
+                                android:src="@drawable/ic_add" />
+
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rvStandardBreaks"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ivAddBreak"
+                                android:nestedScrollingEnabled="false"
+                                android:orientation="vertical"
+                                android:padding="@dimen/dimen_8"
+                                android:visibility="visible"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_8"
+                            android:layout_marginBottom="@dimen/dimen_8">
+
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/btnBreakSave"
+                                style="@style/blueButtonStyle"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginEnd="@dimen/dimen_8"
+                                android:layout_weight="1"
+                                android:text="@string/save" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/btnBreakSaveMore"
+                                style="@style/blueButtonStyle"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginStart="@dimen/dimen_8"
+                                android:layout_weight="2"
+                                android:text="@string/save_add_more"
+                                android:visibility="gone" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- Expenses -->
+                    <LinearLayout
+                        android:id="@+id/llExpenses"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dimen_8"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/etExpenseItem"
+                            style="@style/commonEditTextStyle"
+                            android:layout_margin="@dimen/dimen_4"
+                            android:hint="Item: "
+                            android:inputType="text" />
+
+                        <EditText
+                            android:id="@+id/etExpenseCost"
+                            style="@style/commonEditTextStyle"
+                            android:layout_margin="@dimen/dimen_4"
+                            android:hint="Cost : "
+                            android:inputType="number" />
+
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnExpenseSave"
+                            style="@style/blueButtonStyle"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_margin="@dimen/dimen_8"
+                            android:text="@string/save" />
+
+                    </LinearLayout>
+
+                    <!-- PriceWork  -->
+                    <LinearLayout
+                        android:id="@+id/llPriceWork"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dimen_8"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/tvPriceWorkItem"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dimen_4"
+                            android:background="@drawable/edittextborder"
+                            android:drawableEnd="@drawable/ic_arrow_drop"
+                            android:hint="@string/select_item"
+                            android:padding="8dp" />
+
+                        <TextView
+                            android:id="@+id/tvPriceItem"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dimen_4"
+                            android:hint="@string/select_item"
+                            android:padding="8dp" />
+
+                        <EditText
+                            android:id="@+id/etPriceWorkLocation"
+                            style="@style/commonEditTextStyle"
+                            android:layout_margin="@dimen/dimen_4"
+                            android:hint="Location: "
+                            android:inputType="text" />
+
+                        <EditText
+                            android:id="@+id/etPriceWorkQuantity"
+                            style="@style/commonEditTextStyle"
+                            android:layout_margin="@dimen/dimen_4"
+                            android:hint="Quantity: "
+                            android:inputType="number" />
+
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnPriceSave"
+                            style="@style/blueButtonStyle"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_margin="@dimen/dimen_8"
+                            android:text="@string/save" />
+
+                    </LinearLayout>
+
+                    <!-- Holiday   -->
+                    <LinearLayout
+                        android:id="@+id/llHoliday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dimen_8"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_8"
+                            android:gravity="center_vertical"
+                            android:drawableStart="@drawable/ic_holiday"
+                            android:drawablePadding="@dimen/dimen_8"
+                            android:padding="@dimen/dimen_4"
+                            android:text="Holiday Record"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/etHolidayStartTime"
+                            style="@style/timePicEditTextStyle"
+                            android:layout_margin="@dimen/dimen_4"
+                            android:hint="@string/start_time"
+                            android:inputType="text"
+                            tools:ignore="Autofill" />
+
+                        <EditText
+                            android:id="@+id/etHolidayEndTime"
+                            style="@style/timePicEditTextStyle"
+                            android:layout_margin="@dimen/dimen_4"
+                            android:hint="@string/end_time"
+                            android:inputType="time"
+                            tools:ignore="Autofill" />
+
+                        <EditText
+                            android:id="@+id/etHolidayHours"
+                            style="@style/commonEditTextStyle"
+                            android:layout_margin="@dimen/dimen_4"
+                            android:hint="@string/no_of_hours"
+                            android:inputType="number"
+                            tools:ignore="Autofill" />
+
+                        <EditText
+                            android:id="@+id/etHolidayDuration"
+                            style="@style/commonEditTextStyle"
+                            android:layout_margin="@dimen/dimen_4"
+                            android:hint="Duration :  ( No. of days)  "
+                            android:inputType="time"
+                            tools:ignore="Autofill" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_8">
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/btnHolidaySave"
+                                style="@style/blueButtonStyle"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginEnd="@dimen/dimen_8"
+                                android:layout_weight="1"
+                                android:text="@string/save" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/btnHolidayCancel"
+                                style="@style/blueButtonStyle"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginStart="@dimen/dimen_8"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_rectangle_red"
+                                android:text="@string/cancel" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- Sickness -->
+                    <LinearLayout
+                        android:id="@+id/llSickness"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dimen_8"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_8"
+                            android:drawableStart="@drawable/ic_sick"
+                            android:drawablePadding="@dimen/dimen_8"
+                            android:padding="@dimen/dimen_4"
+                            android:text="Sickness Record"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/etSickStartTime"
+                            style="@style/timePicEditTextStyle"
+                            android:layout_margin="@dimen/dimen_4"
+                            android:hint="@string/start_time"
+                            android:inputType="time" />
+
+                        <EditText
+                            android:id="@+id/etSickEndTime"
+                            style="@style/timePicEditTextStyle"
+                            android:layout_margin="@dimen/dimen_4"
+                            android:hint="@string/end_time"
+                            android:inputType="time" />
+
+                        <EditText
+                            android:id="@+id/etSickHours"
+                            style="@style/commonEditTextStyle"
+                            android:layout_margin="@dimen/dimen_4"
+                            android:hint="@string/no_of_hours"
+                            android:inputType="number"
+                            tools:ignore="Autofill" />
+
+                        <EditText
+                            android:id="@+id/etSickDuration"
+                            style="@style/commonEditTextStyle"
+                            android:layout_margin="@dimen/dimen_4"
+                            android:hint="Duration :  ( No. of days)  "
+                            android:inputType="number" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_8">
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/btnSickSave"
+                                style="@style/blueButtonStyle"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginEnd="@dimen/dimen_8"
+                                android:layout_weight="1"
+                                android:text="@string/save" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/btnSickCancel"
+                                style="@style/blueButtonStyle"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginStart="@dimen/dimen_8"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_rectangle_red"
+                                android:text="@string/cancel" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- Note -->
+                    <LinearLayout
+                        android:id="@+id/llNote"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dimen_8"
+                        android:visibility="gone">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnShowNote"
+                            style="@style/blueButtonStyle"
+                            android:layout_margin="@dimen/dimen_8"
+                            android:minWidth="@dimen/dimen_160"
+                            android:text="@string/create_note" />
+
+                        <LinearLayout
+                            android:id="@+id/llEditNote"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/etNote"
+                                style="@style/commonEditTextStyle"
+                                android:layout_margin="@dimen/dimen_4"
+                                android:gravity="start"
+                                android:hint="@string/enter_text"
+                                android:maxLines="10"
+                                android:minHeight="@dimen/dimen_100" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/btnNoteSave"
+                                style="@style/blueButtonStyle"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_margin="@dimen/dimen_8"
+                                android:text="@string/save" />
+
+                        </LinearLayout>
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvNotes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false"
+                            android:orientation="vertical"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+                    </LinearLayout>
+
+                    <!-- Other -->
+                    <LinearLayout
+                        android:id="@+id/llOther"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dimen_8"
+                        android:visibility="gone">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvOther"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false"
+                            android:orientation="vertical"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnOtherSave"
+                            style="@style/blueButtonStyle"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_margin="@dimen/dimen_8"
+                            android:text="@string/save" />
+
+                    </LinearLayout>
+
+                    <!-- not specified -->
+                    <TextView
+                        android:id="@+id/tvNotSpecified"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/dimen_16"
+                        android:gravity="center"
+                        android:padding="@dimen/dimen_16"
+                        android:text="yet to be specified"
+                        android:visibility="gone" />
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+</FrameLayout>

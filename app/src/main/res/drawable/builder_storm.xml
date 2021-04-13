@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/white" />
+        </shape>
+    </item>
+    <item
+        android:bottom="@dimen/dimen_16"
+        android:drawable="@drawable/splash_icon"
+        android:height="150dp"
+        android:width="300dp"
+        android:gravity="center"
+        android:left="@dimen/dimen_16"
+        android:right="@dimen/dimen_16"
+        android:top="@dimen/dimen_16">
+
+    </item>
+</layer-list>

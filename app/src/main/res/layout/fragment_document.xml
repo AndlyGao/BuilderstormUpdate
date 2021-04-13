@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/dimen_8">
+
+    <TextView
+        android:id="@+id/tvViewType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:layout_marginBottom="@dimen/dimen_8"
+        android:background="@drawable/bg_rectangle_blue"
+        android:drawableStart="@drawable/ic_book"
+        android:drawablePadding="@dimen/dimen_16"
+        android:gravity="center_vertical"
+        android:padding="@dimen/dimen_8"
+        android:paddingEnd="@dimen/dimen_16"
+        android:text="@string/my_items"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <!--    android:background="@drawable/selector_my_items"-->
+
+    <EditText
+        android:id="@+id/etCategory"
+        style="@style/dropDownEditTextStyle"
+        android:layout_marginStart="@dimen/dimen_8"
+        android:layout_marginEnd="@dimen/dimen_8"
+        android:layout_marginBottom="@dimen/dimen_8"
+        android:hint="@string/select_category"
+        android:inputType="text"
+        tools:ignore="Autofill,KeyboardInaccessibleWidget" />
+
+    <EditText
+        android:id="@+id/etUsers"
+        style="@style/dropDownEditTextStyle"
+        android:layout_marginStart="@dimen/dimen_8"
+        android:layout_marginEnd="@dimen/dimen_8"
+        android:layout_marginBottom="@dimen/dimen_8"
+        android:hint="@string/select_issued_by"
+        android:inputType="text"
+        android:visibility="gone"
+        tools:ignore="Autofill,KeyboardInaccessibleWidget" />
+
+    <TextView
+        android:id="@+id/tvDataSource"
+        style="@style/tvDataSource" />
+
+    <LinearLayout
+        android:id="@+id/llDocHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/drawable_header_base_line"
+        android:gravity="center_vertical">
+
+        <View
+            android:id="@+id/viewDocTemplate"
+            android:layout_width="@dimen/dimen_32"
+            android:layout_height="@dimen/dimen_32"
+            android:visibility="invisible" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_12"
+            android:text="@string/template"
+            android:textColor="@color/primary_text_color"
+            android:textSize="@dimen/txt_16"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llMyItemHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/drawable_header_base_line"
+        android:gravity="center_vertical"
+        android:paddingTop="@dimen/dimen_2"
+        android:paddingBottom="@dimen/dimen_2">
+
+        <View
+            android:layout_width="@dimen/dimen_32"
+            android:layout_height="@dimen/dimen_32"
+            android:visibility="invisible" />
+
+        <TextView
+            style="@style/tvHeaderStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:gravity="start"
+            android:text="@string/title" />
+
+        <TextView
+            style="@style/tvHeaderStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:text="@string/completed_for" />
+
+        <TextView
+            style="@style/tvHeaderStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:text="@string/issued_by" />
+
+        <View
+            android:layout_width="@dimen/dimen_32"
+            android:layout_height="@dimen/dimen_32"
+            android:visibility="invisible" />
+
+        <View
+            android:layout_width="@dimen/dimen_32"
+            android:layout_height="@dimen/dimen_32"
+            android:visibility="invisible" />
+
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/dimen_12"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <TextView
+            android:id="@+id/tvNoDataFound"
+            style="@style/styleNoData"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+</LinearLayout>

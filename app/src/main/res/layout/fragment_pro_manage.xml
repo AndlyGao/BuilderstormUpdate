@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnAddProject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/dp8"
+                android:background="@drawable/drawingbg"
+                android:drawableStart="@drawable/ic_proj_management"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/add_project"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/txt_16"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_8"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:layout_marginRight="@dimen/dimen_8"
+            android:layout_marginBottom="@dimen/dimen_8"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etStatusSearch"
+                style="@style/dropDownEditTextStyle"
+                android:layout_weight="1"
+                android:hint="@string/select_status"
+                android:inputType="text"
+                tools:ignore="Autofill,KeyboardInaccessibleWidget" />
+
+            <EditText
+                android:id="@+id/etStageSearch"
+                style="@style/dropDownEditTextStyle"
+                android:layout_marginStart="@dimen/dimen_4"
+                android:layout_weight="1"
+                android:hint="@string/select_stage"
+                android:inputType="text"
+                tools:ignore="Autofill,KeyboardInaccessibleWidget" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llSync"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#D3D3D3"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_4"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/syncing_all"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2" />
+
+            <ProgressBar
+                style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:indeterminate="true" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvDataSource"
+            style="@style/tvDataSource" />
+
+        <LinearLayout
+            android:id="@+id/ll_Header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drawable_header_base_line"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/dimen_4"
+            android:paddingBottom="@dimen/dimen_4">
+
+            <ImageView
+                android:id="@+id/ivSyncAll"
+                android:layout_width="@dimen/dimen_80"
+                android:layout_height="@dimen/dimen_32"
+                android:padding="@dimen/dimen_4"
+                android:src="@drawable/selector_sync"
+                android:visibility="invisible" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.7"
+                android:gravity="center"
+                android:maxLines="1"
+                android:padding="2dp"
+                android:singleLine="true"
+                android:text="@string/id"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                android:textColor="@color/primary_text_color"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_2"
+                android:layout_weight="0.7"
+                android:gravity="center"
+                android:maxLines="1"
+                android:padding="2dp"
+                android:text="@string/name"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                android:textColor="@color/primary_text_color"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.4"
+                android:gravity="center"
+                android:maxLines="1"
+                android:padding="2dp"
+                android:singleLine="true"
+                android:text="@string/address"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                android:textColor="@color/primary_text_color"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_4"
+                android:layout_weight="0.8"
+                android:maxLines="1"
+                android:padding="2dp"
+                android:text="@string/status"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                android:textColor="@color/primary_text_color"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvNoDataFound"
+                style="@style/styleNoData"
+                android:layout_centerInParent="true" />
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipeRefreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="10"
+                    tools:listitem="@layout/item_project" />
+
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</FrameLayout>

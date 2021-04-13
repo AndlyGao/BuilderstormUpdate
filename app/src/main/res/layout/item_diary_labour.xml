@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/llMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_rectangle_black"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/dimen_16"
+        android:padding="@dimen/dimen_8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/etSpinnerLT"
+            style="@style/dropDownEditStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:hint="@string/labour_type"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/etSpinnerPT"
+            style="@style/dropDownEditStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:hint="@string/pay_type"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/etNoSite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/edit_text_background"
+            android:hint="@string/number_on_site"
+            android:inputType="number"
+            android:maxLines="1"
+            android:padding="10dp"
+            android:textColor="@color/primary_text_color"
+            android:textColorHint="@color/secondary_text_color" />
+
+        <TextView
+            android:id="@+id/tvStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/edit_text_background"
+            android:drawableEnd="@drawable/ic_time"
+            android:gravity="center_vertical"
+            android:hint="@string/start_time"
+            android:padding="@dimen/dimen_12" />
+
+        <TextView
+            android:id="@+id/tvFinish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/edit_text_background"
+            android:drawableEnd="@drawable/ic_time"
+            android:gravity="center_vertical"
+            android:hint="@string/finish_time"
+            android:padding="@dimen/dimen_12" />
+
+        <EditText
+            android:id="@+id/etTotalHours"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/edit_text_background"
+            android:hint="@string/total_hours"
+            android:inputType="text"
+            android:maxLines="1"
+            android:padding="10dp"
+            android:textColor="@color/primary_text_color"
+            android:textColorHint="@color/secondary_text_color" />
+
+        <EditText
+            android:id="@+id/etSpinnerCC"
+            style="@style/dropDownEditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:hint="@string/select_cost"
+            android:inputType="text" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/deleteicon"
+        android:padding="@dimen/dimen_8"
+        app:layout_constraintBottom_toTopOf="@+id/llMain"
+        app:layout_constraintEnd_toEndOf="@+id/llMain"
+        app:layout_constraintTop_toTopOf="@+id/llMain" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
