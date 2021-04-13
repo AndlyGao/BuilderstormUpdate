@@ -18,7 +18,6 @@ import com.builderstrom.user.utils.CommonMethods;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-//@SuppressLint("StaticFieldLeak")
 public class WorkSpaceViewModel extends BaseViewModel {
 
     public MutableLiveData<Integer> redirectLD;
